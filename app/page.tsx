@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -20,6 +20,10 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
+
   const [activeSection, setActiveSection] = useState("home");
 
   const scrollToSection = (sectionId: string) => {
@@ -30,8 +34,32 @@ export default function Home() {
     }
   };
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-yellow-400">
+    <div className="min-h-screen bg-gradient-to-b from-yellow-400 via-yellow-300 to-yellow-200">
       <header className="fixed top-0 w-full bg-yellow-400/90 backdrop-blur-sm z-50">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           <span className="text-2xl font-bold">TomCoin</span>
@@ -56,28 +84,39 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <Button className="bg-black text-yellow-400 hover:bg-black/80">
-              buy tom
+            <Button
+              className="bg-black text-yellow-400 hover:bg-black/80"
+              onClick={() => scrollToSection("buy-tom")}
+            >
+              Buy Tom
             </Button>
           </div>
         </nav>
       </header>
 
       <main className="pt-20">
-        <section id="home" className="min-h-screen flex items-center">
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <motion.section
+          id="home"
+          className="min-h-screen flex items-center relative"
+          style={{ opacity, scale }}
+        >
+          <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-center md:text-left"
             >
-              <h1 className="text-6xl font-bold mb-6">TomCoin</h1>
+              <h1 className="text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600">
+                TomCoin
+              </h1>
               <p className="text-xl mb-8">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it's time for humans to take reign
                 again - daddy's home!
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center md:justify-start">
                 <Button variant="outline" size="icon">
                   <Youtube className="h-5 w-5" />
                 </Button>
@@ -109,13 +148,28 @@ export default function Home() {
               />
             </motion.div>
           </div>
-        </section>
+        </motion.section>
 
-        <section id="about" className="py-20">
+        <motion.section
+          id="about"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+          className="py-32"
+        >
           <div className="container mx-auto px-4">
-            <Card className="bg-white/80 backdrop-blur">
+            <motion.h2
+              variants={titleVariants}
+              className="text-5xl font-bold text-center mb-16 relative"
+            >
+              <span className="relative">
+                About
+                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
+              </span>
+            </motion.h2>
+            <Card className="bg-white/90 backdrop-blur shadow-xl">
               <CardContent className="p-6">
-                <h2 className="text-4xl font-bold mb-6">About</h2>
                 <div className="grid md:grid-cols-2 gap-8">
                   <Image
                     src="/about-tomcoin.png"
@@ -145,11 +199,26 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-        </section>
+        </motion.section>
 
-        <section id="how-to-buy" className="py-20">
+        <motion.section
+          id="how-to-buy"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+          className="py-32 bg-white/5 backdrop-blur"
+        >
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-12">How to Buy</h2>
+            <motion.h2
+              variants={titleVariants}
+              className="text-5xl font-bold text-center mb-16 relative"
+            >
+              <span className="relative">
+                How to Buy
+                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
+              </span>
+            </motion.h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
@@ -182,12 +251,20 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
-        <section id="tokenomics" className="py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-12">Tokenomics</h2>
-            <Card className="bg-white/80 backdrop-blur max-w-2xl mx-auto">
+        <section id="tokenomics" className="py-32 bg-white/5 backdrop-blur">
+          <div className="container mx-auto px-4">
+            <motion.h2
+              variants={titleVariants}
+              className="text-5xl font-bold text-center mb-16 relative"
+            >
+              <span className="relative">
+                Tokenomics
+                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
+              </span>
+            </motion.h2>
+            <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
               <CardContent className="p-6">
                 <h3 className="text-2xl mb-4">Token Supply:</h3>
                 <p className="text-4xl font-bold mb-6">420,690,000,000,000</p>
@@ -202,10 +279,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="roadmap" className="py-20">
+        <section id="roadmap" className="py-32">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-12">Roadmap</h2>
-            <Card className="bg-white/80 backdrop-blur max-w-2xl mx-auto">
+            <motion.h2
+              variants={titleVariants}
+              className="text-5xl font-bold text-center mb-16 relative"
+            >
+              <span className="relative">
+                Roadmap
+                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
+              </span>
+            </motion.h2>
+            <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
               <CardContent className="p-6">
                 <div className="space-y-4">
                   <div>
@@ -227,10 +312,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="faq" className="py-20">
+        <section id="faq" className="py-32 bg-white/5 backdrop-blur">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-12">FAQ</h2>
-            <Card className="bg-white/80 backdrop-blur max-w-2xl mx-auto">
+            <motion.h2
+              variants={titleVariants}
+              className="text-5xl font-bold text-center mb-16 relative"
+            >
+              <span className="relative">
+                FAQ
+                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
+              </span>
+            </motion.h2>
+            <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
               <CardContent className="p-6">
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
@@ -264,10 +357,44 @@ export default function Home() {
             </Card>
           </div>
         </section>
+
+        <motion.section
+          id="buy-tom"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+          className="py-32"
+        >
+          <div className="container mx-auto px-4">
+            <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-8">
+                <div className="flex justify-center mb-8">
+                  <Button
+                    className="text-4xl font-bold px-12 py-8 bg-black text-yellow-400 hover:bg-black/80 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300"
+                    onClick={() => window.open("/buy-tom", "_blank")}
+                  >
+                    Buy Tom
+                  </Button>
+                </div>
+                <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                  <p className="text-yellow-800 font-medium">
+                    TomCoin is a meme coin with no intrinsic value or
+                    expectation of financial return. The coin is for
+                    entertainment purposes only.
+                  </p>
+                  <p className="text-yellow-700 mt-2">Enjoy responsibly!</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </motion.section>
       </main>
 
-      <footer className="py-6 text-center">
-        <p>&copy; 2024 by TomCoin. All rights reserved!</p>
+      <footer className="py-8 text-center bg-black/5 backdrop-blur">
+        <p className="text-black/60">
+          &copy; 2024 by TomCoin. All rights reserved!
+        </p>
       </footer>
     </div>
   );
