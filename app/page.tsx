@@ -148,17 +148,6 @@ export default function Home() {
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between relative">
           <span className="text-2xl font-bold">TomCoin</span>
 
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
-
           <div className="hidden md:flex items-center gap-4">
             {[
               "home",
@@ -178,6 +167,20 @@ export default function Home() {
                 {item.replace("-", " ")}
               </button>
             ))}
+          </div>
+
+          <div className="flex items-center gap-4">
+            <button
+              className="md:hidden p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+
             <Button
               className="bg-black text-yellow-400 hover:bg-black/80"
               onClick={() => scrollToSection("buy-tom")}
