@@ -308,28 +308,48 @@ export default function Home() {
                     title: "Create a Wallet",
                     description:
                       "Download metamask or your wallet of choice from the app store or google play store for free.",
+                    icon: "/metamask.svg",
                   },
                   {
                     title: "Get Some ETH",
                     description:
-                      "Have ETH in your wallet to swap to TOM. If you don't have any ETH, you can buy directly on metamask.",
+                      "Have ETH in your wallet to swap to TOM. If you don&apos;t have any ETH, you can buy directly on metamask.",
+                    icon: "/etherscan.svg",
                   },
                   {
                     title: "Go to Uniswap",
                     description:
                       "Connect to uniswap. Go to app.uniswap.org in google chrome or on the browser inside your metamask app.",
+                    icon: "/unswip.png",
                   },
                   {
                     title: "Swap ETH to TOM",
                     description:
-                      "Swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage.",
+                      "Swap ETH to TOM. We have no taxes so you don&apos;t need to worry about buying with a specific slippage.",
+                    icon: "/e-t-swap.svg",
+                    iconSize: 48,
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
                     <Card className="bg-white/80 backdrop-blur transform hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-white/95">
                       <CardContent className="p-6">
-                        <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                        <p>{step.description}</p>
+                        <div className="flex items-center gap-4">
+                          <div className="shrink-0 flex items-center justify-center w-12 h-12">
+                            <Image
+                              src={step.icon}
+                              alt={step.title}
+                              width={step.iconSize || 40}
+                              height={step.iconSize || 40}
+                              className="opacity-80"
+                            />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold mb-4">
+                              {step.title}
+                            </h3>
+                            <p>{step.description}</p>
+                          </div>
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.div>
