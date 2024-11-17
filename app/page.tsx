@@ -270,7 +270,7 @@ export default function Home() {
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
-                    <Card className="bg-white/80 backdrop-blur">
+                    <Card className="bg-white/80 backdrop-blur transform hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-white/95">
                       <CardContent className="p-6">
                         <h3 className="text-xl font-bold mb-4">{step.title}</h3>
                         <p>{step.description}</p>
@@ -302,12 +302,14 @@ export default function Home() {
               </span>
             </motion.h2>
             <motion.div variants={cardVariants}>
-              <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
+              <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 hover:shadow-2xl hover:bg-white/95 transition-all duration-300">
                 <CardContent className="p-6">
                   <h3 className="text-2xl mb-4">Token Supply:</h3>
                   <p className="text-4xl font-bold mb-6">420,690,000,000,000</p>
                   <div className="text-left">
-                    <p className="mb-2">No Taxes. Period. It's that simple.</p>
+                    <p className="mb-2">
+                      No Taxes. Period. It&apos;s that simple.
+                    </p>
                     <p>
                       LP tokens are burnt, and contract ownership is renounced.
                     </p>
