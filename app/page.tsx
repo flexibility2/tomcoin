@@ -440,6 +440,30 @@ export default function Home() {
         </motion.section>
 
         <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+          className="py-20 bg-white/5 backdrop-blur"
+        >
+          <div className="container mx-auto px-4">
+            <motion.div variants={cardVariants} className="max-w-4xl mx-auto">
+              <Card className="bg-white/90 backdrop-blur shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                <CardContent className="p-0">
+                  <Image
+                    src="/TomCoin-meme.png"
+                    alt="TomCoin Meme"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto"
+                  />
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        <motion.section
           id="faq"
           initial="hidden"
           whileInView="visible"
