@@ -313,7 +313,7 @@ export default function Home() {
                   {
                     title: "Get Some ETH",
                     description:
-                      "Have ETH in your wallet to swap to TOM. If you don&apos;t have any ETH, you can buy directly on metamask.",
+                      "Have ETH in your wallet to swap to TOM. If you don't have any ETH, you can buy directly on metamask.",
                     icon: "/etherscan.svg",
                   },
                   {
@@ -325,16 +325,16 @@ export default function Home() {
                   {
                     title: "Swap ETH to TOM",
                     description:
-                      "Swap ETH to TOM. We have no taxes so you don&apos;t need to worry about buying with a specific slippage.",
+                      "Swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage.",
                     icon: "/e-t-swap.svg",
-                    iconSize: 48,
+                    iconSize: 56,
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
                     <Card className="bg-white/80 backdrop-blur transform hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-white/95">
                       <CardContent className="p-6">
                         <div className="flex items-center gap-4">
-                          <div className="shrink-0 flex items-center justify-center w-12 h-12">
+                          <div className="shrink-0 flex items-center justify-center w-14 h-14">
                             <Image
                               src={step.icon}
                               alt={step.title}
