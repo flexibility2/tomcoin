@@ -448,15 +448,33 @@ export default function Home() {
         >
           <div className="container mx-auto px-4">
             <motion.div variants={cardVariants} className="max-w-4xl mx-auto">
-              <Card className="bg-white/90 backdrop-blur shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+              <Card className="bg-white/90 backdrop-blur shadow-xl overflow-hidden">
                 <CardContent className="p-0">
-                  <Image
-                    src="/TomCoin-meme.png"
-                    alt="TomCoin Meme"
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto"
-                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{
+                      opacity: 1,
+                      scale: 1,
+                      transition: {
+                        duration: 0.6,
+                        ease: "easeOut",
+                      },
+                    }}
+                    whileHover={{
+                      scale: 1.02,
+                      transition: {
+                        duration: 0.3,
+                      },
+                    }}
+                  >
+                    <Image
+                      src="/TomCoin-meme.png"
+                      alt="TomCoin Meme"
+                      width={1200}
+                      height={800}
+                      className="w-full h-auto"
+                    />
+                  </motion.div>
                 </CardContent>
               </Card>
             </motion.div>
