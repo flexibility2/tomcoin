@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Accordion,
@@ -36,29 +35,31 @@ export default function Home() {
       <header className="fixed top-0 w-full bg-yellow-400/90 backdrop-blur-sm z-50">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           <span className="text-2xl font-bold">TomCoin</span>
-          <div className="hidden md:flex space-x-6">
-            {[
-              "home",
-              "about",
-              "how-to-buy",
-              "tokenomics",
-              "roadmap",
-              "faq",
-            ].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={`capitalize ${
-                  activeSection === item ? "font-bold" : ""
-                }`}
-              >
-                {item.replace("-", " ")}
-              </button>
-            ))}
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4">
+              {[
+                "home",
+                "about",
+                "how-to-buy",
+                "tokenomics",
+                "roadmap",
+                "faq",
+              ].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className={`capitalize ${
+                    activeSection === item ? "font-bold" : ""
+                  }`}
+                >
+                  {item.replace("-", " ")}
+                </button>
+              ))}
+            </div>
+            <Button className="bg-black text-yellow-400 hover:bg-black/80">
+              buy tom
+            </Button>
           </div>
-          <Button className="bg-black text-yellow-400 hover:bg-black/80">
-            buy tom
-          </Button>
         </nav>
       </header>
 
