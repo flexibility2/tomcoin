@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Youtube } from "lucide-react";
+import { Youtube, Menu, X } from "lucide-react";
 
 interface SocialLink {
   name: string;
@@ -25,6 +25,7 @@ export default function Home() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
   const [activeSection, setActiveSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -144,29 +145,39 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-400 via-yellow-300 to-yellow-200">
       <header className="fixed top-0 w-full bg-yellow-400/90 backdrop-blur-sm z-50">
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <nav className="container mx-auto px-4 py-4 flex items-center justify-between relative">
           <span className="text-2xl font-bold">TomCoin</span>
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-4">
-              {[
-                "home",
-                "about",
-                "how-to-buy",
-                "tokenomics",
-                "roadmap",
-                "faq",
-              ].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`capitalize ${
-                    activeSection === item ? "font-bold" : ""
-                  }`}
-                >
-                  {item.replace("-", " ")}
-                </button>
-              ))}
-            </div>
+
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+
+          <div className="hidden md:flex items-center gap-4">
+            {[
+              "home",
+              "about",
+              "how-to-buy",
+              "tokenomics",
+              "roadmap",
+              "faq",
+            ].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className={`capitalize ${
+                  activeSection === item ? "font-bold" : ""
+                }`}
+              >
+                {item.replace("-", " ")}
+              </button>
+            ))}
             <Button
               className="bg-black text-yellow-400 hover:bg-black/80"
               onClick={() => scrollToSection("buy-tom")}
@@ -174,6 +185,45 @@ export default function Home() {
               Buy Tom
             </Button>
           </div>
+
+          <motion.div
+            initial={false}
+            animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            className={`${
+              isMenuOpen ? "flex" : "hidden"
+            } md:hidden flex-col gap-4 absolute top-full left-0 right-0 bg-yellow-400/95 backdrop-blur-sm p-4 border-t border-black/10 shadow-lg`}
+          >
+            {[
+              "home",
+              "about",
+              "how-to-buy",
+              "tokenomics",
+              "roadmap",
+              "faq",
+            ].map((item) => (
+              <button
+                key={item}
+                onClick={() => {
+                  scrollToSection(item);
+                  setIsMenuOpen(false);
+                }}
+                className={`capitalize text-left py-2 ${
+                  activeSection === item ? "font-bold" : ""
+                }`}
+              >
+                {item.replace("-", " ")}
+              </button>
+            ))}
+            <Button
+              className="bg-black text-yellow-400 hover:bg-black/80 w-full"
+              onClick={() => {
+                scrollToSection("buy-tom");
+                setIsMenuOpen(false);
+              }}
+            >
+              Buy Tom
+            </Button>
+          </motion.div>
         </nav>
       </header>
 
