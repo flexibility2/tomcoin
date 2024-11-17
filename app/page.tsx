@@ -12,12 +12,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Youtube, Menu, X } from "lucide-react";
+import dynamic from "next/dynamic";
 
 interface SocialLink {
   name: string;
   link: string;
   icon: React.ReactNode;
 }
+
+const FaqSection = dynamic(() => import("@/components/FaqSection"), {
+  loading: () => <div>Loading...</div>,
+  ssr: false,
+});
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -277,6 +283,8 @@ export default function Home() {
                 alt="TomCoin Hero"
                 fill
                 className="object-contain"
+                priority
+                loading="eager"
               />
             </motion.div>
           </div>
@@ -311,6 +319,7 @@ export default function Home() {
                         width={400}
                         height={400}
                         className="rounded-lg w-full max-w-[400px] h-auto"
+                        loading="lazy"
                       />
                     </div>
                     <div className="flex flex-col justify-center space-y-4">
@@ -521,6 +530,7 @@ export default function Home() {
                         duration: 0.3,
                       },
                     }}
+                    className="will-change-transform"
                   >
                     <Image
                       src="/TomCoin-meme.png"
@@ -536,62 +546,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <motion.section
-          id="faq"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariants}
-          className="py-20 bg-white/5 backdrop-blur"
-        >
-          <div className="container mx-auto px-4">
-            <motion.h2
-              variants={titleVariants}
-              className="text-5xl font-bold text-center mb-16 relative"
-            >
-              <span className="relative">
-                FAQ
-                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
-              </span>
-            </motion.h2>
-            <motion.div variants={cardVariants}>
-              <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
-                <CardContent className="p-6">
-                  <Accordion type="single" collapsible>
-                    <AccordionItem value="item-1">
-                      <AccordionTrigger>What is TomCoin?</AccordionTrigger>
-                      <AccordionContent>
-                        TomCoin (TOM) is a meme coin that operates on the
-                        Ethereum blockchain. It was created as a tribute to the
-                        Supreme Leader of the Tom Cult, Mr. Tom Style.
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                      <AccordionTrigger>
-                        How does TomCoin Work?
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        TomCoin works like any other ERC-20 token on the
-                        Ethereum blockchain, with no taxes and a simple
-                        tokenomics structure.
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                      <AccordionTrigger>
-                        What are the potential use cases of TomCoin?
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        TomCoin is purely a meme coin for entertainment purposes
-                        only, with no intrinsic value or expectation of
-                        financial return.
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </motion.section>
+        <FaqSection />
 
         <motion.section
           id="buy-tom"
