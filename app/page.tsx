@@ -11,13 +11,13 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Youtube,
-  Twitter,
-  TextIcon as Telegram,
-  MessageCircle,
-  Gitlab,
-} from "lucide-react";
+import { Youtube } from "lucide-react";
+
+interface SocialLink {
+  name: string;
+  link: string;
+  icon: React.ReactNode;
+}
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -81,6 +81,66 @@ export default function Home() {
     },
   };
 
+  const socialLinks: SocialLink[] = [
+    {
+      name: "Youtube",
+      link: "https://youtube.com/",
+      icon: <Youtube className="h-5 w-5" />,
+    },
+    {
+      name: "X",
+      link: "https://x.com/",
+      icon: (
+        <Image
+          src="/x.svg"
+          alt="X"
+          width={20}
+          height={20}
+          className="opacity-80"
+        />
+      ),
+    },
+    {
+      name: "Telegram",
+      link: "https://t.me/",
+      icon: (
+        <Image
+          src="/telegram.svg"
+          alt="Telegram"
+          width={20}
+          height={20}
+          className="opacity-80 invert"
+        />
+      ),
+    },
+    {
+      name: "Etherscan",
+      link: "https://etherscan.io/token/0x71164F2A46ABD32998503E4d69feFC0641EC2c11",
+      icon: (
+        <Image
+          src="/etherscan.svg"
+          alt="Etherscan"
+          width={20}
+          height={20}
+          className="opacity-80"
+        />
+      ),
+    },
+    {
+      name: "Uniswap",
+      link: "https://app.uniswap.org/",
+      icon: (
+        <Image
+          src="/unswip.png"
+          alt="Uniswap"
+          width={20}
+          height={20}
+          className="opacity-80 brightness-0"
+        />
+      ),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-400 via-yellow-300 to-yellow-200">
       <header className="fixed top-0 w-full bg-yellow-400/90 backdrop-blur-sm z-50">
@@ -140,21 +200,17 @@ export default function Home() {
                 again - daddy's home!
               </p>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <Button variant="outline" size="icon">
-                  <Youtube className="h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <Twitter className="h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <Telegram className="h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <MessageCircle className="h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <Gitlab className="h-5 w-5" />
-                </Button>
+                {socialLinks.map((social) => (
+                  <Button
+                    key={social.name}
+                    variant="outline"
+                    size="icon"
+                    onClick={() => window.open(social.link, "_blank")}
+                    className="hover:scale-110 transition-transform duration-200 bg-transparent border-black/20 hover:bg-black/5 hover:border-black/30"
+                  >
+                    {social.icon}
+                  </Button>
+                ))}
               </div>
             </motion.div>
             <motion.div
