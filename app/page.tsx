@@ -3,12 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Youtube, Menu, X } from "lucide-react";
@@ -255,8 +249,8 @@ export default function Home() {
               </h1>
               <p className="text-xl mb-6">
                 The most memeable, memorable, ridiculous, and insane meme coin.
-                The dogs have had their day, it's time for humans to take reign
-                again - daddy's home!
+                The dogs have had their day, it&apos;s time for humans to take
+                reign again - daddy&apos;s home!
               </p>
               <div className="flex space-x-4 justify-center md:justify-start">
                 {socialLinks.map((social) => (
