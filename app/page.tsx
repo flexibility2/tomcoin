@@ -123,7 +123,7 @@ export default function Home() {
           alt="Etherscan"
           width={20}
           height={20}
-          className="opacity-80"
+          className="opacity-80 brightness-0"
         />
       ),
     },
@@ -134,8 +134,8 @@ export default function Home() {
         <Image
           src="/unswip.png"
           alt="Uniswap"
-          width={20}
-          height={20}
+          width={24}
+          height={24}
           className="opacity-80 brightness-0"
         />
       ),
@@ -230,24 +230,24 @@ export default function Home() {
         </nav>
       </header>
 
-      <main className="pt-20">
+      <main className="pt-12">
         <motion.section
           id="home"
-          className="min-h-screen flex items-center relative"
+          className="min-h-[calc(100vh-4rem)] flex items-center relative"
           style={{ opacity, scale }}
         >
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-6 md:gap-12 items-center relative">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-center md:text-left"
+              className="text-center md:text-left pt-4 md:pt-0"
             >
-              <h1 className="text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600">
+              <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600">
                 TomCoin
               </h1>
-              <p className="text-xl mb-8">
+              <p className="text-xl mb-6">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it's time for humans to take reign
                 again - daddy's home!
@@ -300,19 +300,21 @@ export default function Home() {
                 <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
               </span>
             </motion.h2>
-            <motion.div variants={cardVariants}>
+            <motion.div variants={cardVariants} className="max-w-6xl mx-auto">
               <Card className="bg-white/90 backdrop-blur shadow-xl">
                 <CardContent className="p-6">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <Image
-                      src="/about-tomcoin.png"
-                      alt="About TomCoin"
-                      width={400}
-                      height={400}
-                      className="rounded-lg"
-                    />
-                    <div>
-                      <p className="text-lg mb-4">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className="flex justify-center md:justify-start">
+                      <Image
+                        src="/about-tomcoin.png"
+                        alt="About TomCoin"
+                        width={400}
+                        height={400}
+                        className="rounded-lg w-full max-w-[400px] h-auto"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center space-y-4">
+                      <p className="text-lg">
                         TomCoin (TOM) is a meme coin that operates on the
                         Ethereum blockchain. It was created as a tribute to the
                         Supreme Leader of the Tom Cult, Mr. Tom Style, who has
