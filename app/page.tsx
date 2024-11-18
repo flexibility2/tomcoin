@@ -230,10 +230,10 @@ export default function Home() {
         </nav>
       </header>
 
-      <main className="pt-12">
+      <main className="pt-12 md:pt-16">
         <motion.section
           id="home"
-          className="min-h-[calc(100vh-4rem)] flex items-center relative"
+          className="min-h-[calc(100vh-4rem)] flex items-center relative pt-8 md:pt-0"
           style={{ opacity, scale }}
         >
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
@@ -242,7 +242,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-center md:text-left pt-4 md:pt-0"
+              className="text-center md:text-left pt-8 md:pt-0"
             >
               <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600">
                 TomCoin
@@ -365,7 +365,7 @@ export default function Home() {
                   {
                     title: "Create a Wallet",
                     description:
-                      "Download metamask or your wallet of choice from the app store or google play store for free.",
+                      "Download metamask or your wallet of choice from the app store or google play store for free. Available on iOS and Android.",
                     icon: "/metamask.svg",
                   },
                   {
@@ -389,9 +389,9 @@ export default function Home() {
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
-                    <Card className="bg-white/80 backdrop-blur transform hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-white/95">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4">
+                    <Card className="bg-white/80 backdrop-blur transform hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-white/95 h-full">
+                      <CardContent className="p-6 flex flex-col h-full">
+                        <div className="flex items-start gap-4 h-full">
                           <div className="shrink-0 flex items-center justify-center w-14 h-14">
                             <Image
                               src={step.icon}
@@ -401,11 +401,11 @@ export default function Home() {
                               className="opacity-80"
                             />
                           </div>
-                          <div>
+                          <div className="flex-1 flex flex-col">
                             <h3 className="text-xl font-bold mb-4">
                               {step.title}
                             </h3>
-                            <p>{step.description}</p>
+                            <p className="flex-1">{step.description}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -557,10 +557,7 @@ export default function Home() {
               <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-8">
                   <div className="flex justify-center mb-8">
-                    <Button
-                      className="text-4xl font-bold px-12 py-8 bg-black text-yellow-400 hover:bg-black/80 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300"
-                      onClick={() => window.open("/buy-tom", "_blank")}
-                    >
+                    <Button className="text-4xl font-bold px-12 py-8 bg-black text-yellow-400 hover:bg-black/80 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
                       Buy Tom
                     </Button>
                   </div>
