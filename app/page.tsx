@@ -352,7 +352,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl font-bold text-center mb-16 relative"
+              className="text-5xl font-bold text-center mb-12 relative"
             >
               <span className="relative">
                 How to Buy
@@ -385,14 +385,14 @@ export default function Home() {
                     description:
                       "Swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage.",
                     icon: "/e-t-swap.svg",
-                    iconSize: 56,
+                    iconSize: 72,
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
                     <Card className="bg-white/80 backdrop-blur transform hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-white/95 h-full">
                       <CardContent className="p-6 flex flex-col h-full">
-                        <div className="flex items-start gap-4 h-full">
-                          <div className="shrink-0 flex items-center justify-center w-14 h-14">
+                        <div className="flex flex-col items-center text-center">
+                          <div className="mb-6 flex items-center justify-center w-20 h-20">
                             <Image
                               src={step.icon}
                               alt={step.title}
@@ -401,11 +401,9 @@ export default function Home() {
                               className="opacity-80"
                             />
                           </div>
-                          <div className="flex-1 flex flex-col">
-                            <h3 className="text-xl font-bold mb-4">
-                              {step.title}
-                            </h3>
-                            <p className="flex-1">{step.description}</p>
+                          <div className="space-y-3">
+                            <h3 className="text-xl font-bold">{step.title}</h3>
+                            <p className="text-gray-600">{step.description}</p>
                           </div>
                         </div>
                       </CardContent>
