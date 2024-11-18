@@ -152,19 +152,25 @@ export default function Home() {
             {[
               "home",
               "about",
-              "how-to-buy",
+              "how to buy",
               "tokenomics",
               "roadmap",
               "faq",
             ].map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item)}
-                className={`capitalize ${
-                  activeSection === item ? "font-bold" : ""
+                onClick={() =>
+                  scrollToSection(item.split(" ").join("-").toLowerCase())
+                }
+                className={`${
+                  activeSection === item.split(" ").join("-").toLowerCase()
+                    ? "font-bold"
+                    : ""
                 }`}
               >
-                {item.replace("-", " ")}
+                {item === "how to buy"
+                  ? "How to buy"
+                  : item.charAt(0).toUpperCase() + item.slice(1)}
               </button>
             ))}
           </div>
@@ -199,7 +205,7 @@ export default function Home() {
             {[
               "home",
               "about",
-              "how-to-buy",
+              "how to buy",
               "tokenomics",
               "roadmap",
               "faq",
@@ -207,14 +213,18 @@ export default function Home() {
               <button
                 key={item}
                 onClick={() => {
-                  scrollToSection(item);
+                  scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`capitalize text-left py-2 ${
-                  activeSection === item ? "font-bold" : ""
+                className={`text-left py-2 ${
+                  activeSection === item.split(" ").join("-").toLowerCase()
+                    ? "font-bold"
+                    : ""
                 }`}
               >
-                {item.replace("-", " ")}
+                {item === "how to buy"
+                  ? "How to buy"
+                  : item.charAt(0).toUpperCase() + item.slice(1)}
               </button>
             ))}
             <Button
@@ -379,20 +389,29 @@ export default function Home() {
                     description:
                       "Connect to uniswap. Go to app.uniswap.org in google chrome or on the browser inside your metamask app.",
                     icon: "/unswip.png",
+                    iconSize: 56,
                   },
                   {
                     title: "Swap ETH to TOM",
                     description:
                       "Swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage.",
                     icon: "/e-t-swap.svg",
-                    iconSize: 72,
+                    iconSize: 96,
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
                     <Card className="bg-white/80 backdrop-blur transform hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-white/95 h-full">
                       <CardContent className="p-6 flex flex-col h-full">
                         <div className="flex flex-col items-center text-center">
-                          <div className="mb-6 flex items-center justify-center w-20 h-20">
+                          <div
+                            className={`mb-2 flex items-center justify-center ${
+                              step.title === "Swap ETH to TOM"
+                                ? "w-24 h-24"
+                                : step.title === "Go to Uniswap"
+                                ? "w-20 h-20"
+                                : "w-16 h-16"
+                            }`}
+                          >
                             <Image
                               src={step.icon}
                               alt={step.title}
@@ -401,7 +420,7 @@ export default function Home() {
                               className="opacity-80"
                             />
                           </div>
-                          <div className="space-y-3">
+                          <div className="space-y-2">
                             <h3 className="text-xl font-bold">{step.title}</h3>
                             <p className="text-gray-600">{step.description}</p>
                           </div>
