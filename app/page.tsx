@@ -48,7 +48,11 @@ function ParticlesBackground() {
       });
     }
 
+    let animationFrameId: number;
+
     function animate() {
+      if (!canvas || !ctx) return;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
@@ -61,10 +65,16 @@ function ParticlesBackground() {
         ctx.fill();
       });
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     animate();
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
 
   return (
@@ -198,17 +208,6 @@ export default function Home() {
       ),
     },
   ];
-
-  const shimmerVariants = {
-    initial: { backgroundPosition: "200% 0" },
-    animate: {
-      backgroundPosition: ["-200% 0", "200% 0"],
-      transition: {
-        repeat: Infinity,
-        duration: 8,
-      },
-    },
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-400 via-yellow-300 to-yellow-200 relative overflow-hidden">
