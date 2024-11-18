@@ -82,3 +82,16 @@ body {
     background-size: 20px 20px;
   }
 }
+
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.tilt-card:hover {
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+}
+
+.tilt-content {
+  transform: translateZ(20px);
+}
