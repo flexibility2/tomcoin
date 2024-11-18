@@ -308,7 +308,7 @@ export default function Home() {
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="flex justify-center md:justify-start">
                       <Image
-                        src="/about-tomcoin.png"
+                        src="/TomCoinWithEth.svg"
                         alt="About TomCoin"
                         width={400}
                         height={400}
