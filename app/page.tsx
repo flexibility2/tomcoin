@@ -439,7 +439,9 @@ export default function Home() {
               <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 hover:shadow-2xl hover:bg-white/95 transition-all duration-300">
                 <CardContent className="p-6">
                   <h3 className="text-2xl mb-4">Token Supply:</h3>
-                  <p className="text-4xl font-bold mb-6">420,690,000,000,000</p>
+                  <p className="text-2xl md:text-4xl font-bold mb-6 break-words">
+                    420,690,000,000,000
+                  </p>
                   <div className="text-left">
                     <p className="mb-2">
                       No Taxes. Period. It&apos;s that simple.

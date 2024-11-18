@@ -77,9 +77,11 @@ export default function FaqSection() {
         <motion.div variants={cardVariants}>
           <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
             <CardContent className="p-6">
-              <Accordion type="single" collapsible>
+              <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>What is TomCoin?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">
+                    What is TomCoin?
+                  </AccordionTrigger>
                   <AccordionContent>
                     TomCoin (TOM) is a meme coin that operates on the Ethereum
                     blockchain. It was created as a tribute to the Supreme
@@ -87,14 +89,16 @@ export default function FaqSection() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger>How does TomCoin Work?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">
+                    How does TomCoin Work?
+                  </AccordionTrigger>
                   <AccordionContent>
                     TomCoin works like any other ERC-20 token on the Ethereum
                     blockchain, with no taxes and a simple tokenomics structure.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger>
+                  <AccordionTrigger className="text-left">
                     What are the potential use cases of TomCoin?
                   </AccordionTrigger>
                   <AccordionContent>
