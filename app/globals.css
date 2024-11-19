@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --theme-color: #fffb42;
+}
+
+body {
+  background-color: white;
+}
+
+/* 为header弹出效果添加样式 */
+.header-highlight {
+  background-color: var(--theme-color);
+}
+
+/* 可以添加一个通用的主题色类 */
+.theme-color {
+  color: var(--theme-color);
+}
+
+.theme-bg {
+  background-color: var(--theme-color);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -153,7 +153,15 @@ export default function Home() {
     {
       name: "Youtube",
       link: "https://youtube.com/",
-      icon: <Youtube className="h-5 w-5" />,
+      icon: (
+        <Image
+          src="/yt.svg"
+          alt="X"
+          width={54}
+          height={37}
+          className="opacity-80"
+        />
+      ),
     },
     {
       name: "X",
@@ -162,8 +170,8 @@ export default function Home() {
         <Image
           src="/x.svg"
           alt="X"
-          width={20}
-          height={20}
+          width={54}
+          height={37}
           className="opacity-80"
         />
       ),
@@ -173,11 +181,11 @@ export default function Home() {
       link: "https://t.me/",
       icon: (
         <Image
-          src="/telegram.svg"
+          src="/tg.svg"
           alt="Telegram"
-          width={20}
-          height={20}
-          className="opacity-80 invert"
+          width={54}
+          height={37}
+          className="opacity-80"
         />
       ),
     },
@@ -188,9 +196,9 @@ export default function Home() {
         <Image
           src="/etherscan.svg"
           alt="Etherscan"
-          width={20}
-          height={20}
-          className="opacity-80 brightness-0"
+          width={54}
+          height={37}
+          className="opacity-80"
         />
       ),
     },
@@ -199,22 +207,22 @@ export default function Home() {
       link: "https://app.uniswap.org/",
       icon: (
         <Image
-          src="/unswip.png"
+          src="/uni.svg"
           alt="Uniswap"
-          width={24}
-          height={24}
-          className="opacity-80 brightness-0"
+          width={54}
+          height={37}
+          className="opacity-80"
         />
       ),
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-400 via-yellow-300 to-yellow-200 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-theme via-theme/90 to-theme/80 relative overflow-hidden">
       <ParticlesBackground />
-      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.3)_50%,transparent_75%,transparent_100%)] bg-[length:250%_100%] animate-shimmer" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow-400/30 rounded-full blur-[120px] pointer-events-none" />
-      <header className="fixed top-0 w-full bg-yellow-400/90 backdrop-blur-sm z-50">
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,251,66,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_100%] animate-shimmer" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-theme/30 rounded-full blur-[120px] pointer-events-none" />
+      <header className="fixed top-0 w-full bg-theme/95 backdrop-blur-sm z-50">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between relative">
           <span className="text-2xl font-bold">TomCoin</span>
 
@@ -258,11 +266,11 @@ export default function Home() {
             </button>
 
             <Button
-              className="bg-black text-yellow-400 hover:bg-black/80 relative overflow-hidden group transition-all duration-300 ease-out hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,0,0.3)]"
+              className="bg-black text-theme hover:bg-black/80 relative overflow-hidden group transition-all duration-300 ease-out hover:scale-105 hover:shadow-[0_0_20px_rgba(255,251,66,0.3)]"
               onClick={() => scrollToSection("buy-tom")}
             >
               <span className="relative z-10">Buy Tom</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/0 via-yellow-400/30 to-yellow-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-r from-theme/0 via-theme/30 to-theme/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
             </Button>
           </div>
 
@@ -271,7 +279,7 @@ export default function Home() {
             animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             className={`${
               isMenuOpen ? "flex" : "hidden"
-            } md:hidden flex-col gap-4 absolute top-full left-0 right-0 bg-yellow-400/95 backdrop-blur-sm p-4 border-t border-black/10 shadow-lg`}
+            } md:hidden flex-col gap-4 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-4 border-t border-black/10 shadow-lg`}
           >
             {[
               "home",
@@ -299,7 +307,7 @@ export default function Home() {
               </button>
             ))}
             <Button
-              className="bg-black text-yellow-400 hover:bg-black/80 w-full"
+              className="bg-black text-theme hover:bg-black/80 w-full"
               onClick={() => {
                 scrollToSection("buy-tom");
                 setIsMenuOpen(false);
@@ -318,15 +326,15 @@ export default function Home() {
           style={{ opacity, scale }}
         >
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-6 md:gap-12 items-center relative">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-2 md:gap-8 items-center relative">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-center md:text-left pt-8 md:pt-0"
+              className="text-left pt-8 md:pt-0"
             >
               <motion.h1
-                className="text-6xl md:text-7xl font-bold mb-4 relative"
+                className="text-6xl md:text-7xl font-bold mb-8 relative"
                 animate={{
                   backgroundPosition: ["0%", "100%", "0%"],
                 }}
@@ -336,27 +344,27 @@ export default function Home() {
                   ease: "linear",
                 }}
               >
-                <span className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-black via-yellow-600 to-black bg-[length:200%_auto]">
-                  TomCoin
-                  <div className="absolute -inset-2 bg-yellow-400/30 blur-2xl -z-10" />
+                <span className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-black via-theme to-black bg-[length:200%_auto]">
+                  <span className="font-['Avenir_Next'] text-[48px] font-bold leading-[48px] text-left text-black">
+                    TomCoin
+                  </span>
+                  <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="text-xl mb-6">
+              <p className="font-['Avenir_Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] pr-4">
                 The most memeable, memorable, ridiculous, and insane meme coin.
-                The dogs have had their day, it&apos;s time for humans to take
-                reign again - daddy&apos;s home!
+                The dogs have had their day, it’s time for humans to take reign
+                again - daddy&apos;s home!
               </p>
-              <div className="flex space-x-4 justify-center md:justify-start">
+              <div className="flex space-x-4 justify-center md:justify-start mt-4">
                 {socialLinks.map((social) => (
-                  <Button
+                  <button
                     key={social.name}
-                    variant="outline"
-                    size="icon"
                     onClick={() => window.open(social.link, "_blank")}
-                    className="hover:scale-110 transition-transform duration-200 bg-transparent border-black/20 hover:bg-black/5 hover:border-black/30"
+                    className="hover:scale-110 transition-transform duration-200 p-3"
                   >
                     {social.icon}
-                  </Button>
+                  </button>
                 ))}
               </div>
             </motion.div>
@@ -397,7 +405,7 @@ export default function Home() {
               </span>
             </motion.h2>
             <motion.div variants={cardVariants} className="max-w-6xl mx-auto">
-              <Card className="bg-white/80 backdrop-blur-md shadow-xl border border-white/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer">
+              <Card className="bg-theme/10 backdrop-blur-md shadow-xl border border-theme/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer">
                 <CardContent className="p-6">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="flex justify-center md:justify-start">
@@ -441,7 +449,7 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionVariants}
-          className="py-20 bg-white/5 backdrop-blur"
+          className="py-20 bg-theme/5 backdrop-blur"
         >
           <div className="container mx-auto px-4">
             <motion.h2
@@ -490,7 +498,7 @@ export default function Home() {
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
-                    <Card className="bg-white/80 backdrop-blur-md shadow-xl border border-white/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/95 group">
+                    <Card className="bg-theme/10 backdrop-blur-md shadow-xl border border-theme/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-theme/95 group">
                       <CardContent className="p-6 flex flex-col h-full">
                         <div className="flex flex-col items-center text-center h-full">
                           <div
@@ -662,17 +670,17 @@ export default function Home() {
               <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-8">
                   <div className="flex justify-center mb-8">
-                    <Button className="text-4xl font-bold px-12 py-8 bg-black text-yellow-400 hover:bg-black/80 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <Button className="text-4xl font-bold px-12 py-8 bg-black text-theme hover:bg-black/80 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
                       Buy Tom
                     </Button>
                   </div>
-                  <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <p className="text-yellow-800 font-medium">
+                  <div className="p-4 bg-theme/50 rounded-lg border border-theme/20">
+                    <p className="text-theme/80 font-medium">
                       TomCoin is a meme coin with no intrinsic value or
                       expectation of financial return. The coin is for
                       entertainment purposes only.
                     </p>
-                    <p className="text-yellow-700 mt-2">Enjoy responsibly!</p>
+                    <p className="text-theme/700 mt-2">Enjoy responsibly!</p>
                   </div>
                 </CardContent>
               </Card>
@@ -681,7 +689,7 @@ export default function Home() {
         </motion.section>
       </main>
 
-      <footer className="py-8 text-center bg-black/5 backdrop-blur">
+      <footer className="py-8 text-center bg-theme/10 backdrop-blur">
         <p className="text-black/60">
           &copy; 2024 by TomCoin. All rights reserved!
         </p>
