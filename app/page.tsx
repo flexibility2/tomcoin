@@ -334,7 +334,7 @@ export default function Home() {
               className="text-left pt-8 md:pt-0"
             >
               <motion.h1
-                className="text-6xl md:text-7xl font-bold mb-8 relative"
+                className="text-6xl md:text-7xl font-bold mb-8 relative pl-4"
                 animate={{
                   backgroundPosition: ["0%", "100%", "0%"],
                 }}
@@ -351,12 +351,12 @@ export default function Home() {
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="font-['Avenir_Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] pr-4">
+              <p className="font-['Avenir_Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4">
                 The most memeable, memorable, ridiculous, and insane meme coin.
-                The dogs have had their day, it’s time for humans to take reign
+                The dogs have had their day, it's time for humans to take reign
                 again - daddy&apos;s home!
               </p>
-              <div className="flex space-x-4 justify-center md:justify-start mt-4">
+              <div className="flex space-x-4 justify-center md:justify-start mt-4 pl-4">
                 {socialLinks.map((social) => (
                   <button
                     key={social.name}
