@@ -457,23 +457,23 @@ export default function Home() {
                     description:
                       "Download metamask or your wallet of choice from the app store or google play store for free. Available on iOS and Android.",
                     icon: "/metamask.svg",
-                    iconSize: 40,
+                    iconSize: 60,
                     iconClass: "w-16 h-16 mb-4",
                   },
                   {
                     title: "Get Some ETH",
                     description:
                       "Have ETH in your wallet to swap to TOM. If you don't have any ETH, you can buy directly on metamask.",
-                    icon: "/etherscan.svg",
-                    iconSize: 40,
+                    icon: "/ethereum.svg",
+                    iconSize: 60,
                     iconClass: "w-16 h-16 mb-4",
                   },
                   {
                     title: "Go to Uniswap",
                     description:
                       "Connect to uniswap. Go to app.uniswap.org in google chrome or on the browser inside your metamask app.",
-                    icon: "/unswip.png",
-                    iconSize: 56,
+                    icon: "/uniswap.svg",
+                    iconSize: 60,
                     iconClass: "w-20 h-20 mb-2",
                   },
                   {
@@ -481,12 +481,12 @@ export default function Home() {
                     description:
                       "Swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage.",
                     icon: "/e-t-swap.svg",
-                    iconSize: 80,
+                    iconSize: 120,
                     iconClass: "w-32 h-24 -mt-2",
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
-                    <Card className="bg-theme/10 backdrop-blur-md shadow-xl border border-theme/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-theme/95 group">
+                    <Card className="bg-white/90 backdrop-blur-md shadow-xl border-2 border-black rounded-3xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/95 group">
                       <CardContent className="p-6 flex flex-col h-full">
                         <div className="flex flex-col items-center text-center h-full">
                           <div
