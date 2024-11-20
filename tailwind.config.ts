@@ -46,6 +46,7 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         theme: "#FFFB42",
+        'header-yellow': '#F1ED0E',
       },
       borderRadius: {
         lg: "var(--radius)",

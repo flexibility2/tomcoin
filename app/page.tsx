@@ -222,11 +222,11 @@ export default function Home() {
       <ParticlesBackground />
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,251,66,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_100%] animate-shimmer" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-theme/30 rounded-full blur-[120px] pointer-events-none" />
-      <header className="fixed top-0 w-full bg-theme/95 backdrop-blur-sm z-50">
+      <header className="fixed top-0 w-full bg-header-yellow z-50">
         <nav className="container mx-auto px-4 py-2 flex items-center justify-between relative">
           <span className="text-2xl font-bold">TomCoin</span>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-8">
             {[
               "home",
               "about",
@@ -241,13 +241,11 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase())
                 }
                 className={`${activeSection === item.split(" ").join("-").toLowerCase()
-                  ? "font-bold"
-                  : ""
-                  }`}
+                    ? "font-bold"
+                    : ""
+                  } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
               >
-                {item === "how to buy"
-                  ? "How to buy"
-                  : item.charAt(0).toUpperCase() + item.slice(1)}
+                {item}
               </button>
             ))}
           </div>
@@ -265,11 +263,10 @@ export default function Home() {
             </button>
 
             <Button
-              className="bg-black text-theme hover:bg-black/80 relative overflow-hidden group transition-all duration-300 ease-out hover:scale-105 hover:shadow-[0_0_20px_rgba(255,251,66,0.3)]"
+              className="bg-transparent hover:bg-black/5 text-black border-2 border-black rounded-full px-6 py-1 text-sm font-medium transition-colors duration-200"
               onClick={() => scrollToSection("buy-tom")}
             >
-              <span className="relative z-10">Buy Tom</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-theme/0 via-theme/30 to-theme/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              buy tom
             </Button>
           </div>
 
@@ -277,7 +274,7 @@ export default function Home() {
             initial={false}
             animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             className={`${isMenuOpen ? "flex" : "hidden"
-              } md:hidden flex-col gap-4 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-4 border-t border-black/10 shadow-lg`}
+              } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
           >
             {[
               "home",
@@ -293,24 +290,22 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`text-left py-2 ${activeSection === item.split(" ").join("-").toLowerCase()
+                className={`text-left py-1.5 ${activeSection === item.split(" ").join("-").toLowerCase()
                   ? "font-bold"
                   : ""
                   }`}
               >
-                {item === "how to buy"
-                  ? "How to buy"
-                  : item.charAt(0).toUpperCase() + item.slice(1)}
+                {item}
               </button>
             ))}
             <Button
-              className="bg-black text-theme hover:bg-black/80 w-full"
+              className="bg-black text-theme hover:bg-black/80 w-full mt-1"
               onClick={() => {
                 scrollToSection("buy-tom");
                 setIsMenuOpen(false);
               }}
             >
-              Buy Tom
+              buy tom
             </Button>
           </motion.div>
         </nav>
@@ -674,7 +669,7 @@ export default function Home() {
                 <CardContent className="p-8">
                   <div className="flex justify-center mb-8">
                     <Button className="text-4xl font-bold px-12 py-8 bg-black text-theme hover:bg-black/80 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                      Buy Tom
+                      buy tom
                     </Button>
                   </div>
                   <div className="p-4 bg-theme/50 rounded-lg border border-theme/20">
