@@ -223,7 +223,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,251,66,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_100%] animate-shimmer" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-theme/30 rounded-full blur-[120px] pointer-events-none" />
       <header className="fixed top-0 w-full bg-theme/95 backdrop-blur-sm z-50">
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between relative">
+        <nav className="container mx-auto px-4 py-2 flex items-center justify-between relative">
           <span className="text-2xl font-bold">TomCoin</span>
 
           <div className="hidden md:flex items-center gap-4">
@@ -316,22 +316,22 @@ export default function Home() {
         </nav>
       </header>
 
-      <main className="pt-12 md:pt-16">
+      <main className="pt-4 md:pt-8">
         <motion.section
           id="home"
-          className="min-h-[calc(100vh-4rem)] flex items-center relative pt-8 md:pt-0"
+          className="min-h-[calc(100vh-3rem)] flex items-start md:items-center relative -mt-2"
           style={{ opacity, scale }}
         >
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-2 md:gap-8 items-center relative">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-2 md:gap-8 items-center relative pt-16 md:pt-0">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-left pt-8 md:pt-0"
+              className="text-left"
             >
               <motion.h1
-                className="text-6xl md:text-7xl font-bold mb-8 relative pl-4"
+                className="text-6xl md:text-7xl font-bold mb-3 relative pl-4"
                 animate={{
                   backgroundPosition: ["0%", "100%", "0%"],
                 }}
@@ -348,19 +348,25 @@ export default function Home() {
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="font-['Avenir_Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4">
+              <p className="font-['Avenir_Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it's time for humans to take reign
                 again - daddy&apos;s home!
               </p>
-              <div className="flex space-x-4 justify-center md:justify-start mt-4 pl-4">
+              <div className="flex space-x-2 justify-center md:justify-start mt-3 pl-4">
                 {socialLinks.map((social) => (
                   <button
                     key={social.name}
                     onClick={() => window.open(social.link, "_blank")}
-                    className="hover:scale-110 transition-transform duration-200 p-3"
+                    className="hover:scale-105 transition-transform duration-200 p-2"
                   >
-                    {social.icon}
+                    <Image
+                      src={social.icon.props.src}
+                      alt={social.icon.props.alt}
+                      width={40}
+                      height={28}
+                      className="opacity-80"
+                    />
                   </button>
                 ))}
               </div>
