@@ -390,7 +390,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
             >
               about
             </motion.h2>
@@ -440,12 +440,12 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionVariants}
-          className="py-20 bg-theme/5 backdrop-blur"
+          className="min-h-screen flex flex-col items-center justify-center py-10 md:py-16"
         >
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
             >
               how to buy
             </motion.h2>
@@ -530,7 +530,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
             >
               tokenomics
             </motion.h2>
@@ -567,7 +567,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
             >
               roadmap
             </motion.h2>
