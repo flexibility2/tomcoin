@@ -376,17 +376,14 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionVariants}
-          className="py-20"
+          className="pt-6 pb-12"
         >
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl font-bold text-center mb-12 relative"
+              className="text-5xl font-bold text-center mb-8"
             >
-              <span className="relative">
-                About
-                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
-              </span>
+              about
             </motion.h2>
             <motion.div variants={cardVariants} className="max-w-6xl mx-auto">
               <Card className="bg-theme/10 backdrop-blur-md shadow-xl border border-theme/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer">
@@ -403,21 +400,11 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-col justify-center space-y-4">
-                      <p className="text-lg">
-                        TomCoin (TOM) is a meme coin that operates on the
-                        Ethereum blockchain. It was created as a tribute to the
-                        Supreme Leader of the Tom Cult, Mr. Tom Style, who has
-                        gained enormous popularity and a cult following amongst
-                        the next generation of entrepreneurs around the world
-                        through his massively popular show: The Tom Style Show.
-                        TomCoin positions itself purely as a meme coin.
+                      <p className="font-['Avenir Next'] text-base md:text-[16px] font-medium leading-[22px] text-left text-black max-w-[338px]">
+                        TomCoin (TOM) is a meme coin that operates on the Ethereum blockchain. It was created as a tribute to the Supreme Leader of the Tom Cult, Mr. Tom Style, who has gained enormous popularity and a cult following amongst the next generation of entrepreneurs around the world through his massively popular show: The Tom Style Show. TomCoin positions itself purely as a meme coin.
                       </p>
-                      <p className="text-lg">
-                        TomCoin is here to make meme coins great again. Launched
-                        stealth with no presale, zero taxes, LP burnt and
-                        contract renounced, TOM is a coin for the people,
-                        forever. Fueled by pure memetic power, let TOM show you
-                        the way.
+                      <p className="font-['Avenir Next'] text-base md:text-[16px] font-medium leading-[22px] text-left text-black max-w-[338px]">
+                        TomCoin is here to make meme coins great again. Launched stealth with no presale, zero taxes, LP burnt and ownership renounced, TOM is a coin for the people, forever. Fueled by pure memetic power, let TOM show you the way.
                       </p>
                     </div>
                   </div>
