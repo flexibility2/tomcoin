@@ -305,11 +305,11 @@ export default function Home() {
       <main className="pt-4 md:pt-8">
         <motion.section
           id="home"
-          className="min-h-[calc(100vh-3rem)] flex items-start md:items-center relative -mt-2"
+          className="flex items-start md:items-center relative -mt-2"
           style={{ opacity, scale }}
         >
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-2 md:gap-8 items-center relative pt-16 md:pt-0">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-2 md:gap-8 items-center relative pt-16 pb-8 md:py-12">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -368,6 +368,7 @@ export default function Home() {
             </motion.div>
           </div>
         </motion.section>
+        <div className="h-2 bg-white"></div>
 
         <motion.section
           id="about"
@@ -425,6 +426,7 @@ export default function Home() {
             </motion.div>
           </div>
         </motion.section>
+        <div className="h-2 bg-white"></div>
 
         <motion.section
           id="how-to-buy"
@@ -512,6 +514,7 @@ export default function Home() {
             </motion.div>
           </div>
         </motion.section>
+        <div className="h-2 bg-white"></div>
 
         <motion.section
           id="tokenomics"
@@ -551,6 +554,7 @@ export default function Home() {
             </motion.div>
           </div>
         </motion.section>
+        <div className="h-2 bg-white"></div>
 
         <motion.section
           id="roadmap"
@@ -594,6 +598,7 @@ export default function Home() {
             </motion.div>
           </div>
         </motion.section>
+        <div className="h-2 bg-white"></div>
 
         <motion.section
           initial="hidden"
@@ -637,8 +642,10 @@ export default function Home() {
             </motion.div>
           </div>
         </motion.section>
+        <div className="h-2 bg-white"></div>
 
         <FaqSection />
+        <div className="h-2 bg-white"></div>
 
         <motion.section
           id="buy-tom"
