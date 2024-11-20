@@ -241,8 +241,8 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase())
                 }
                 className={`${activeSection === item.split(" ").join("-").toLowerCase()
-                    ? "font-bold"
-                    : ""
+                  ? "font-bold"
+                  : ""
                   } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
               >
                 {item}
@@ -348,7 +348,7 @@ export default function Home() {
                 The dogs have had their day, it's time for humans to take reign
                 again - daddy&apos;s home!
               </p>
-              <div className="flex space-x-2 justify-center md:justify-start mt-3 pl-4">
+              <div className="flex space-x-1 justify-center md:justify-start mt-2 pl-1">
                 {socialLinks.map((social) => (
                   <button
                     key={social.name}
@@ -358,8 +358,8 @@ export default function Home() {
                     <Image
                       src={social.icon.props.src}
                       alt={social.icon.props.alt}
-                      width={40}
-                      height={28}
+                      width={54}
+                      height={37}
                       className="opacity-80"
                     />
                   </button>
