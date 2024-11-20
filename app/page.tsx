@@ -224,7 +224,12 @@ export default function Home() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-theme/30 rounded-full blur-[120px] pointer-events-none" />
       <header className="fixed top-0 w-full bg-header-yellow z-50">
         <nav className="container mx-auto px-4 py-2 flex items-center justify-between relative">
-          <span className="text-2xl font-bold" style={{ fontFamily: 'Avenir Next' }}>TomCoin</span>
+          <span
+            className="text-2xl font-bold"
+            style={{ fontFamily: "Avenir Next" }}
+          >
+            TomCoin
+          </span>
 
           <div className="hidden md:flex items-center gap-8">
             {[
@@ -240,10 +245,11 @@ export default function Home() {
                 onClick={() =>
                   scrollToSection(item.split(" ").join("-").toLowerCase())
                 }
-                className={`${activeSection === item.split(" ").join("-").toLowerCase()
-                  ? "font-bold"
-                  : ""
-                  } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
+                className={`${
+                  activeSection === item.split(" ").join("-").toLowerCase()
+                    ? "font-bold"
+                    : ""
+                } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
               >
                 {item}
               </button>
@@ -273,8 +279,9 @@ export default function Home() {
           <motion.div
             initial={false}
             animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-            className={`${isMenuOpen ? "flex" : "hidden"
-              } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
+            className={`${
+              isMenuOpen ? "flex" : "hidden"
+            } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
           >
             {[
               "home",
@@ -290,10 +297,12 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`text-left py-1.5 ${activeSection === item.split(" ").join("-").toLowerCase() && item !== "home"
-                  ? "font-bold"
-                  : ""
-                  }`}
+                className={`text-left py-1.5 ${
+                  activeSection === item.split(" ").join("-").toLowerCase() &&
+                  item !== "home"
+                    ? "font-bold"
+                    : ""
+                }`}
               >
                 {item}
               </button>
@@ -328,13 +337,13 @@ export default function Home() {
                 }}
               >
                 <span className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-black via-theme to-black bg-[length:200%_auto]">
-                  <span className="font-['Avenir Next'] text-[48px] leading-[48px] text-center text-black w-[205px] h-[48px] block font-bold">
+                  <span className="font-['Avenir Next'] text-4xl sm:text-5xl md:text-[48px] leading-tight md:leading-[48px] text-center text-black w-full md:w-[205px] block font-bold">
                     TomCoin
                   </span>
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="font-['Avenir Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
+              <p className="font-['Avenir Next'] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it's time for humans to take reign
                 again - daddy&apos;s home!
@@ -381,7 +390,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
               about
             </motion.h2>
@@ -400,11 +409,21 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-col justify-center space-y-4">
-                      <p className="font-['Avenir Next'] text-base md:text-[16px] font-medium leading-[22px] text-left text-black max-w-[338px]">
-                        TomCoin (TOM) is a meme coin that operates on the Ethereum blockchain. It was created as a tribute to the Supreme Leader of the Tom Cult, Mr. Tom Style, who has gained enormous popularity and a cult following amongst the next generation of entrepreneurs around the world through his massively popular show: The Tom Style Show. TomCoin positions itself purely as a meme coin.
+                      <p className="font-['Avenir Next'] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
+                        TomCoin (TOM) is a meme coin that operates on the
+                        Ethereum blockchain. It was created as a tribute to the
+                        Supreme Leader of the Tom Cult, Mr. Tom Style, who has
+                        gained enormous popularity and a cult following amongst
+                        the next generation of entrepreneurs around the world
+                        through his massively popular show: The Tom Style Show.
+                        TomCoin positions itself purely as a meme coin.
                       </p>
-                      <p className="font-['Avenir Next'] text-base md:text-[16px] font-medium leading-[22px] text-left text-black max-w-[338px]">
-                        TomCoin is here to make meme coins great again. Launched stealth with no presale, zero taxes, LP burnt and ownership renounced, TOM is a coin for the people, forever. Fueled by pure memetic power, let TOM show you the way.
+                      <p className="font-['Avenir Next'] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
+                        TomCoin is here to make meme coins great again. Launched
+                        stealth with no presale, zero taxes, LP burnt and
+                        ownership renounced, TOM is a coin for the people,
+                        forever. Fueled by pure memetic power, let TOM show you
+                        the way.
                       </p>
                     </div>
                   </div>
@@ -426,12 +445,9 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl font-bold text-center mb-12 relative"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
-              <span className="relative">
-                How to Buy
-                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
-              </span>
+              how to buy
             </motion.h2>
             <motion.div variants={cardVariants}>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -485,10 +501,10 @@ export default function Home() {
                             />
                           </div>
                           <div className="space-y-2 flex-1">
-                            <h3 className="text-xl font-bold transition-colors duration-300 group-hover:text-black">
+                            <h3 className="text-lg sm:text-xl font-bold transition-colors duration-300 group-hover:text-black">
                               {step.title}
                             </h3>
-                            <p className="text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
                               {step.description}
                             </p>
                           </div>
@@ -514,12 +530,9 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl font-bold text-center mb-16 relative"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
-              <span className="relative">
-                Tokenomics
-                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
-              </span>
+              tokenomics
             </motion.h2>
             <motion.div variants={cardVariants}>
               <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 hover:shadow-2xl hover:bg-white/95 transition-all duration-300">
@@ -554,12 +567,9 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl font-bold text-center mb-16 relative"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
-              <span className="relative">
-                Roadmap
-                <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
-              </span>
+              roadmap
             </motion.h2>
             <motion.div variants={cardVariants}>
               <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
