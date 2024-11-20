@@ -119,19 +119,19 @@ body {
 
 /* 添加 Avenir Next 字体 */
 @font-face {
-  font-family: "Avenir Next";
-  src: url("/fonts/AvenirNext/AvenirNext-Regular.woff2") format("woff2"),
-    url("/fonts/AvenirNext/AvenirNext-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Avenir Next";
-  src: url("/fonts/AvenirNext/AvenirNext-Bold.woff2") format("woff2"),
-    url("/fonts/AvenirNext/AvenirNext-Bold.woff") format("woff");
+  font-family: 'Avenir Next';
+  src: url('/fonts/AvenirNext/AvenirNext-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
+
+/* 如果您有其他 Avenir Next 字重，也可以加入：
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('/fonts/AvenirNext/AvenirNext-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/

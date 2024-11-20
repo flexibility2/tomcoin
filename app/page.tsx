@@ -240,11 +240,10 @@ export default function Home() {
                 onClick={() =>
                   scrollToSection(item.split(" ").join("-").toLowerCase())
                 }
-                className={`${
-                  activeSection === item.split(" ").join("-").toLowerCase()
-                    ? "font-bold"
-                    : ""
-                }`}
+                className={`${activeSection === item.split(" ").join("-").toLowerCase()
+                  ? "font-bold"
+                  : ""
+                  }`}
               >
                 {item === "how to buy"
                   ? "How to buy"
@@ -277,9 +276,8 @@ export default function Home() {
           <motion.div
             initial={false}
             animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-            className={`${
-              isMenuOpen ? "flex" : "hidden"
-            } md:hidden flex-col gap-4 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-4 border-t border-black/10 shadow-lg`}
+            className={`${isMenuOpen ? "flex" : "hidden"
+              } md:hidden flex-col gap-4 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-4 border-t border-black/10 shadow-lg`}
           >
             {[
               "home",
@@ -295,11 +293,10 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`text-left py-2 ${
-                  activeSection === item.split(" ").join("-").toLowerCase()
-                    ? "font-bold"
-                    : ""
-                }`}
+                className={`text-left py-2 ${activeSection === item.split(" ").join("-").toLowerCase()
+                  ? "font-bold"
+                  : ""
+                  }`}
               >
                 {item === "how to buy"
                   ? "How to buy"
@@ -345,7 +342,7 @@ export default function Home() {
                 }}
               >
                 <span className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-black via-theme to-black bg-[length:200%_auto]">
-                  <span className="font-['Avenir_Next'] text-[48px] font-bold leading-[48px] text-left text-black">
+                  <span className="font-['Avenir Next'] text-[48px] leading-[48px] text-center text-black w-[205px] h-[48px] block font-bold">
                     TomCoin
                   </span>
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
