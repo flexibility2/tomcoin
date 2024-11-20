@@ -224,7 +224,7 @@ export default function Home() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-theme/30 rounded-full blur-[120px] pointer-events-none" />
       <header className="fixed top-0 w-full bg-header-yellow z-50">
         <nav className="container mx-auto px-4 py-2 flex items-center justify-between relative">
-          <span className="text-2xl font-bold">TomCoin</span>
+          <span className="text-2xl font-bold" style={{ fontFamily: 'Avenir Next' }}>TomCoin</span>
 
           <div className="hidden md:flex items-center gap-8">
             {[
@@ -263,7 +263,7 @@ export default function Home() {
             </button>
 
             <Button
-              className="bg-transparent hover:bg-black/5 text-black border-2 border-black rounded-full px-6 py-1 text-sm font-medium transition-colors duration-200"
+              className="bg-transparent hover:bg-black/5 text-black border-2 border-black rounded-full px-6 py-1 text-sm font-bold transition-colors duration-200"
               onClick={() => scrollToSection("buy-tom")}
             >
               buy tom
@@ -290,7 +290,7 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`text-left py-1.5 ${activeSection === item.split(" ").join("-").toLowerCase()
+                className={`text-left py-1.5 ${activeSection === item.split(" ").join("-").toLowerCase() && item !== "home"
                   ? "font-bold"
                   : ""
                   }`}
@@ -298,15 +298,6 @@ export default function Home() {
                 {item}
               </button>
             ))}
-            <Button
-              className="bg-black text-theme hover:bg-black/80 w-full mt-1"
-              onClick={() => {
-                scrollToSection("buy-tom");
-                setIsMenuOpen(false);
-              }}
-            >
-              buy tom
-            </Button>
           </motion.div>
         </nav>
       </header>
