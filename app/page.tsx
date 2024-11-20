@@ -343,7 +343,7 @@ export default function Home() {
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="font-['Avenir_Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
+              <p className="font-['Avenir Next'] text-base md:text-[16px] font-medium leading-[22.4px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it's time for humans to take reign
                 again - daddy&apos;s home!
@@ -355,13 +355,7 @@ export default function Home() {
                     onClick={() => window.open(social.link, "_blank")}
                     className="hover:scale-105 transition-transform duration-200 p-2"
                   >
-                    <Image
-                      src={social.icon.props.src}
-                      alt={social.icon.props.alt}
-                      width={54}
-                      height={37}
-                      className="opacity-80"
-                    />
+                    {social.icon}
                   </button>
                 ))}
               </div>

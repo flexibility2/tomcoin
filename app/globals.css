@@ -126,6 +126,13 @@ body {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('/fonts/AvenirNext/AvenirNext-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 /* 如果您有其他 Avenir Next 字重，也可以加入：
 @font-face {
   font-family: 'Avenir Next';
