@@ -637,18 +637,19 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 pb-12">
             <motion.div variants={cardVariants}>
-              <div className="max-w-md mx-auto text-center">
+              <div className="max-w-3xl mx-auto text-center">
                 <Button
-                  className="px-12 py-6 bg-black text-white hover:bg-black/90 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mb-8 text-xl font-bold"
+                  className="px-16 py-8 bg-black text-white hover:bg-black/90 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mb-12 text-2xl font-bold"
+                  onClick={() => window.open("https://app.uniswap.org/", "_blank")}
                 >
                   buy tom
                 </Button>
 
-                <div className="text-black text-base sm:text-lg md:text-xl lg:text-2xl text-left px-4">
+                <div className="text-black text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto text-left md:text-center px-4">
                   <p>
                     TomCoin is a meme coin with no intrinsic value or expectation of financial return. The coin is for entertainment purposes only.
                   </p>
-                  <p>Enjoy responsibly!</p>
+                  <p className="font-medium">Enjoy responsibly!</p>
                 </div>
               </div>
             </motion.div>
