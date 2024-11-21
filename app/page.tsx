@@ -635,7 +635,7 @@ export default function Home() {
           variants={sectionVariants}
           className="py-12 bg-theme"
         >
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 pb-12">
             <motion.div variants={cardVariants}>
               <div className="max-w-md mx-auto text-center">
                 <Button
