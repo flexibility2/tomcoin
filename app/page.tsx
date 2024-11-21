@@ -585,7 +585,7 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionVariants}
-          className="py-20 bg-white/5 backdrop-blur"
+          className="py-10 bg-white/5 backdrop-blur"
         >
           <div className="container mx-auto px-4">
             <motion.div variants={cardVariants} className="max-w-4xl mx-auto">
