@@ -62,20 +62,17 @@ export default function FaqSection() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={sectionVariants}
-      className="py-20 bg-white/5 backdrop-blur"
+      className="py-12 bg-white/5 backdrop-blur"
     >
       <div className="container mx-auto px-4">
         <motion.h2
           variants={titleVariants}
-          className="text-5xl font-bold text-center mb-16 relative"
+          className="text-5xl font-bold text-center mb-8"
         >
-          <span className="relative">
-            FAQ
-            <div className="absolute -bottom-4 left-0 right-0 h-2 bg-black/10 rounded-full" />
-          </span>
+          faq
         </motion.h2>
         <motion.div variants={cardVariants}>
-          <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
+          <Card className="bg-white/90 backdrop-blur border-2 border-black rounded-3xl max-w-2xl mx-auto">
             <CardContent className="p-6">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
