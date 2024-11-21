@@ -83,9 +83,7 @@ export default function FaqSection() {
                     What is TomCoin?
                   </AccordionTrigger>
                   <AccordionContent>
-                    TomCoin (TOM) is a meme coin that operates on the Ethereum
-                    blockchain. It was created as a tribute to the Supreme
-                    Leader of the Tom Cult, Mr. Tom Style.
+                    TomCoin (TOM) is a meme coin that operates on the Ethereum blockchain. It was created as a tribute to the Supreme Leader of the Tom Cult, Mr. Tom Style, who has gained enormous popularity and a cult following amongst the next generation of entrepreneurs around the world through his massively popular show: The Tom Style Show. TomCoin positions itself purely as a meme coin. TOM distinguishes itself by instituting a no-tax policy and being transparent about its lack of utility, keeping things simple as a meme coin.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
