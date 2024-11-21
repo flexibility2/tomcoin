@@ -633,35 +633,32 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionVariants}
-          className="py-20"
+          className="py-12 bg-theme"
         >
           <div className="container mx-auto px-4">
             <motion.div variants={cardVariants}>
-              <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-8">
-                  <div className="flex justify-center mb-8">
-                    <Button className="text-4xl font-bold px-12 py-8 bg-black text-theme hover:bg-black/80 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                      buy tom
-                    </Button>
-                  </div>
-                  <div className="p-4 bg-theme/50 rounded-lg border border-theme/20">
-                    <p className="text-theme/80 font-medium">
-                      TomCoin is a meme coin with no intrinsic value or
-                      expectation of financial return. The coin is for
-                      entertainment purposes only.
-                    </p>
-                    <p className="text-theme/700 mt-2">Enjoy responsibly!</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="max-w-md mx-auto text-center">
+                <Button
+                  className="px-12 py-6 bg-black text-white hover:bg-black/90 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mb-8 text-xl font-bold"
+                >
+                  buy tom
+                </Button>
+
+                <div className="text-black text-base sm:text-lg md:text-xl lg:text-2xl text-left px-4">
+                  <p>
+                    TomCoin is a meme coin with no intrinsic value or expectation of financial return. The coin is for entertainment purposes only.
+                  </p>
+                  <p>Enjoy responsibly!</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </motion.section>
       </main>
 
-      <footer className="py-8 text-center bg-theme/10 backdrop-blur">
-        <p className="text-black/60">
-          &copy; 2024 by TomCoin. All rights reserved!
+      <footer className="py-6 text-center bg-header-yellow">
+        <p className="text-black text-sm">
+          &copy;2024 by TomCoin. All rights reserved!
         </p>
       </footer>
     </div>
