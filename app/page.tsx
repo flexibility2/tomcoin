@@ -340,10 +340,8 @@ export default function Home() {
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="font-['Avenir Next'] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
-                The most memeable, memorable, ridiculous, and insane meme coin.
-                The dogs have had their day, it's time for humans to take reign
-                again - daddy&apos;s home!
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
+                The most memeable, memorable, ridiculous, and insane meme coin. The dogs have had their day, it’s time for humans to take reign again - daddy's home!
               </p>
               <div className="flex space-x-1 justify-center md:justify-start mt-2 pl-1">
                 {socialLinks.map((social) => (
@@ -406,21 +404,13 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-col justify-center space-y-4">
-                      <p className="font-['Avenir Next'] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
-                        TomCoin (TOM) is a meme coin that operates on the
-                        Ethereum blockchain. It was created as a tribute to the
-                        Supreme Leader of the Tom Cult, Mr. Tom Style, who has
-                        gained enormous popularity and a cult following amongst
-                        the next generation of entrepreneurs around the world
-                        through his massively popular show: The Tom Style Show.
-                        TomCoin positions itself purely as a meme coin.
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
+                        TomCoin (TOM) is a meme coin that operates on the Ethereum blockchain. It was created as a tribute to the Supreme Leader of the Tom Cult, Mr. Tom Style, who has gained enormous popularity and a cult following amongst the next generation of entrepreneurs around the world through his massively popular show: The Tom Style Show. TomCoin positions itself purely as a meme coin.
+
                       </p>
-                      <p className="font-['Avenir Next'] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
-                        TomCoin is here to make meme coins great again. Launched
-                        stealth with no presale, zero taxes, LP burnt and
-                        ownership renounced, TOM is a coin for the people,
-                        forever. Fueled by pure memetic power, let TOM show you
-                        the way.
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
+                        TomCoin is here to make meme coins great again. Launched stealth with no presale, zero taxes, LP burnt and ownership renounced, TOM is a coin for the people, forever. Fueled by pure memetic power, let TOM show you the way.
+
                       </p>
                     </div>
                   </div>
@@ -452,7 +442,7 @@ export default function Home() {
                   {
                     title: "Create a Wallet",
                     description:
-                      "Download metamask or your wallet of choice from the app store or google play store for free. Available on iOS and Android.",
+                      "download metamask or your wallet of choice from the app store or google play store for free. Desktop users, download the google chrome extension by going to metamask.io.",
                     icon: "/metamask.svg",
                     iconSize: 60,
                     iconClass: "w-16 h-16 mb-4",
@@ -460,7 +450,7 @@ export default function Home() {
                   {
                     title: "Get Some ETH",
                     description:
-                      "Have ETH in your wallet to swap to TOM. If you don't have any ETH, you can buy directly on metamask.",
+                      "have ETH in your wallet to swap to TOM. If you don’t have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.",
                     icon: "/ethereum.svg",
                     iconSize: 60,
                     iconClass: "w-16 h-16 mb-4",
@@ -468,7 +458,7 @@ export default function Home() {
                   {
                     title: "Go to Uniswap",
                     description:
-                      "Connect to uniswap. Go to app.uniswap.org in google chrome or on the browser inside your metamask app.",
+                      "connect to uniswap. Go to app.uniswap.org in google chrome or on the browser inside your metamask app. Connect your wallet. Paste the TOM token address into uniswap, select TomCoin, and confirm. When metamask prompts you for a wallet signature, sign.",
                     icon: "/uniswap.svg",
                     iconSize: 60,
                     iconClass: "w-20 h-20 mb-2",
@@ -476,7 +466,7 @@ export default function Home() {
                   {
                     title: "Swap ETH to TOM",
                     description:
-                      "Swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage.",
+                      "swap ETH to TOM. We have no taxes so you don’t need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.",
                     icon: "/e-t-swap.svg",
                     iconSize: 120,
                     iconClass: "w-32 h-24 -mt-2",
@@ -501,7 +491,7 @@ export default function Home() {
                             <h3 className="text-lg sm:text-xl font-bold transition-colors duration-300 group-hover:text-black">
                               {step.title}
                             </h3>
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium">
+                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium text-left">
                               {step.description}
                             </p>
                           </div>
