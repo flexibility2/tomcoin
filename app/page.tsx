@@ -501,7 +501,7 @@ export default function Home() {
                             <h3 className="text-lg sm:text-xl font-bold transition-colors duration-300 group-hover:text-black">
                               {step.title}
                             </h3>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
+                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium">
                               {step.description}
                             </p>
                           </div>
@@ -538,9 +538,9 @@ export default function Home() {
                   420,690,000,000,000
                 </p>
               </div>
-              <Card className="bg-white/90 backdrop-blur-md shadow-xl border-2 border-black rounded-3xl">
-                <CardContent className="p-6">
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl space-y-4 flex flex-col">
+              <Card className="bg-white/90 backdrop-blur-md shadow-xl border-2 border-black rounded-[2rem]">
+                <CardContent className="py-12 px-4">
+                  <p className="text-base sm:text-lg space-y-6 flex flex-col text-black font-medium">
                     <span>No Taxes. Period. It&apos;s that simple.</span>
                     <span>LP tokens burnt. Ownership renounced.</span>
                   </p>
