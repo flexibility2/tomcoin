@@ -528,7 +528,7 @@ export default function Home() {
                   420,690,000,000,000
                 </p>
               </div>
-              <Card className="bg-white/90 backdrop-blur-md shadow-xl border-2 border-black rounded-[2rem]">
+              <Card className="bg-white shadow-xl border-2 border-black rounded-[2rem]">
                 <CardContent className="py-12 px-4">
                   <p className="text-base sm:text-lg space-y-6 flex flex-col text-black font-medium">
                     <span>No Taxes. Period. It&apos;s that simple.</span>
@@ -556,24 +556,22 @@ export default function Home() {
             >
               roadmap
             </motion.h2>
-            <motion.div variants={cardVariants}>
-              <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto">
-                <CardContent className="p-6">
-                  <motion.div className="space-y-4">
-                    {["Meme", "Vibe and HODL", "Meme Takeover"].map(
-                      (phase, index) => (
-                        <motion.div
-                          key={phase}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.2 }}
-                        >
-                          <h3 className="text-xl font-bold">
-                            Phase {index + 1}: {phase}
-                          </h3>
-                        </motion.div>
-                      )
-                    )}
+            <motion.div variants={cardVariants} className="max-w-2xl mx-auto">
+              <Card className="bg-white shadow-xl border-2 border-black rounded-[2rem]">
+                <CardContent className="py-12 px-8">
+                  <motion.div className="space-y-6">
+                    {["Meme", "Vibe and HODL", "Meme Takeover"].map((phase, index) => (
+                      <motion.div
+                        key={phase}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.2 }}
+                      >
+                        <p className="text-base sm:text-lg text-black font-medium">
+                          Phase {index + 1}: {phase}
+                        </p>
+                      </motion.div>
+                    ))}
                   </motion.div>
                 </CardContent>
               </Card>
