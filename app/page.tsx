@@ -245,11 +245,10 @@ export default function Home() {
                 onClick={() =>
                   scrollToSection(item.split(" ").join("-").toLowerCase())
                 }
-                className={`${
-                  activeSection === item.split(" ").join("-").toLowerCase()
-                    ? "font-bold"
-                    : ""
-                } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
+                className={`${activeSection === item.split(" ").join("-").toLowerCase()
+                  ? "font-bold"
+                  : ""
+                  } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
               >
                 {item}
               </button>
@@ -279,9 +278,8 @@ export default function Home() {
           <motion.div
             initial={false}
             animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-            className={`${
-              isMenuOpen ? "flex" : "hidden"
-            } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
+            className={`${isMenuOpen ? "flex" : "hidden"
+              } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
           >
             {[
               "home",
@@ -297,12 +295,11 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`text-left py-1.5 ${
-                  activeSection === item.split(" ").join("-").toLowerCase() &&
+                className={`text-left py-1.5 ${activeSection === item.split(" ").join("-").toLowerCase() &&
                   item !== "home"
-                    ? "font-bold"
-                    : ""
-                }`}
+                  ? "font-bold"
+                  : ""
+                  }`}
               >
                 {item}
               </button>
@@ -534,21 +531,19 @@ export default function Home() {
             >
               tokenomics
             </motion.h2>
-            <motion.div variants={cardVariants}>
-              <Card className="bg-white/90 backdrop-blur shadow-xl max-w-2xl mx-auto transform hover:scale-105 hover:shadow-2xl hover:bg-white/95 transition-all duration-300">
+            <motion.div variants={cardVariants} className="max-w-2xl mx-auto">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-extrabold mb-4">token supply:</h3>
+                <p className="text-3xl font-extrabold mb-6 break-words">
+                  420,690,000,000,000
+                </p>
+              </div>
+              <Card className="bg-white/90 backdrop-blur-md shadow-xl border-2 border-black rounded-3xl">
                 <CardContent className="p-6">
-                  <h3 className="text-2xl mb-4">Token Supply:</h3>
-                  <p className="text-2xl md:text-4xl font-bold mb-6 break-words">
-                    420,690,000,000,000
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl space-y-4 flex flex-col">
+                    <span>No Taxes. Period. It&apos;s that simple.</span>
+                    <span>LP tokens burnt. Ownership renounced.</span>
                   </p>
-                  <div className="text-left">
-                    <p className="mb-2">
-                      No Taxes. Period. It&apos;s that simple.
-                    </p>
-                    <p>
-                      LP tokens are burnt, and contract ownership is renounced.
-                    </p>
-                  </div>
                 </CardContent>
               </Card>
             </motion.div>
