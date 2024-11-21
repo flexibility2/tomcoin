@@ -468,7 +468,7 @@ export default function Home() {
                     description:
                       "swap ETH to TOM. We have no taxes so you don’t need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.",
                     icon: "/e-t-swap.svg",
-                    iconSize: 120,
+                    iconSize: 130,
                     iconClass: "w-32 h-24 -mt-2",
                   },
                 ].map((step, index) => (
