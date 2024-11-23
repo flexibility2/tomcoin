@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Youtube, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -347,7 +347,7 @@ export default function Home() {
               <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it’s time for humans to take reign
-                again - daddy's home!
+                again - daddy&apos;s home!
               </p>
               <div className="flex space-x-1 justify-center md:justify-start mt-2 pl-1">
                 {socialLinks.map((social) => (

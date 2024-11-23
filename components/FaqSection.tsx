@@ -105,10 +105,11 @@ export default function FaqSection() {
                     it quickly. Additionally, TOM features a burning mechanism
                     whereby a portion of the coins are permanently removed from
                     circulation on a regular basis. This strives to maintain
-                    scarcity despite the coin's maximum supply. The Ethereum
-                    blockchain supports TOM through the Proof-of-Stake (PoS)
-                    consensus mechanism, where decentralized validators stake 32
-                    ETH to process transactions and support the network.
+                    scarcity despite the coin&apos;s maximum supply. The
+                    Ethereum blockchain supports TOM through the Proof-of-Stake
+                    (PoS) consensus mechanism, where decentralized validators
+                    stake 32 ETH to process transactions and support the
+                    network.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
@@ -116,16 +117,17 @@ export default function FaqSection() {
                     What are the potential use cases of TomCoin?
                   </AccordionTrigger>
                   <AccordionContent>
-                    As a meme coin, TOM's primary use case is as a digital asset
-                    that can be acquired, held, and exchanged. It strives to
-                    appeal to the cryptocurrency community by keeping things
-                    pure and simple as a meme coin. The project's no-tax policy
-                    and transparency about its lack of utility are part of its
-                    appeal. Additionally, TOM employs a redistribution system
-                    that rewards long-term stakers, providing them with benefits
-                    to remain committed to the project. This system aims to
-                    encourage coin stability and could potentially attract users
-                    interested in holding the token for longer periods.
+                    As a meme coin, TOM&apos;s primary use case is as a digital
+                    asset that can be acquired, held, and exchanged. It strives
+                    to appeal to the cryptocurrency community by keeping things
+                    pure and simple as a meme coin. The project&apos;s no-tax
+                    policy and transparency about its lack of utility are part
+                    of its appeal. Additionally, TOM employs a redistribution
+                    system that rewards long-term stakers, providing them with
+                    benefits to remain committed to the project. This system
+                    aims to encourage coin stability and could potentially
+                    attract users interested in holding the token for longer
+                    periods.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
