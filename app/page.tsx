@@ -390,7 +390,7 @@ export default function Home() {
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="flex flex-col items-center md:items-end md:pr-[calc((100%-860px)/2)]">
+              <div className="flex flex-col items-center md:items-end md:pr-[calc((100%-960px)/2)]">
                 <motion.h2
                   variants={titleVariants}
                   className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-8"
@@ -399,7 +399,7 @@ export default function Home() {
                 </motion.h2>
               </div>
               <motion.div variants={cardVariants}>
-                <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-8">
+                <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-24">
                   <div className="flex justify-center w-full md:w-auto">
                     <Image
                       src="/TomCoinWithEth.svg"
