@@ -246,7 +246,8 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase())
                 }
                 className={`${
-                  activeSection === item.split(" ").join("-").toLowerCase()
+                  activeSection === item.split(" ").join("-").toLowerCase() &&
+                  item !== "home"
                     ? "font-bold"
                     : ""
                 } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
