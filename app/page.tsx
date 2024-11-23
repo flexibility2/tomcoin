@@ -450,8 +450,8 @@ export default function Home() {
             >
               how to buy
             </motion.h2>
-            <motion.div variants={cardVariants}>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div variants={cardVariants} className="max-w-3xl mx-auto">
+              <div className="grid grid-cols-1 gap-6">
                 {[
                   {
                     title: "Create a Wallet",
@@ -459,15 +459,15 @@ export default function Home() {
                       "download metamask or your wallet of choice from the app store or google play store for free. Desktop users, download the google chrome extension by going to metamask.io.",
                     icon: "/metamask.svg",
                     iconSize: 60,
-                    iconClass: "w-16 h-16 mb-4",
+                    iconClass: "w-32 h-24",
                   },
                   {
                     title: "Get Some ETH",
                     description:
-                      "have ETH in your wallet to swap to TOM. If you don’t have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.",
+                      "have ETH in your wallet to swap to TOM. If you don't have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.",
                     icon: "/ethereum.svg",
                     iconSize: 60,
-                    iconClass: "w-16 h-16 mb-4",
+                    iconClass: "w-32 h-24",
                   },
                   {
                     title: "Go to Uniswap",
@@ -475,37 +475,39 @@ export default function Home() {
                       "connect to uniswap. Go to app.uniswap.org in google chrome or on the browser inside your metamask app. Connect your wallet. Paste the TOM token address into uniswap, select TomCoin, and confirm. When metamask prompts you for a wallet signature, sign.",
                     icon: "/uniswap.svg",
                     iconSize: 60,
-                    iconClass: "w-20 h-20 mb-2",
+                    iconClass: "w-32 h-24",
                   },
                   {
                     title: "Swap ETH to TOM",
                     description:
-                      "swap ETH to TOM. We have no taxes so you don’t need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.",
+                      "swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.",
                     icon: "/e-t-swap.svg",
                     iconSize: 130,
-                    iconClass: "w-32 h-24 -mt-2",
+                    iconClass: "w-32 h-24",
                   },
                 ].map((step, index) => (
                   <motion.div key={index} variants={cardVariants}>
                     <Card className="bg-white/90 backdrop-blur-md shadow-xl border-2 border-black rounded-3xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:animate-shimmer h-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/95 group">
-                      <CardContent className="p-6 flex flex-col h-full">
-                        <div className="flex flex-col items-center text-center h-full">
-                          <div
-                            className={`flex items-center justify-center ${step.iconClass} transform transition-transform duration-300 group-hover:scale-110`}
-                          >
-                            <Image
-                              src={step.icon}
-                              alt={step.title}
-                              width={step.iconSize}
-                              height={step.iconSize}
-                              className="opacity-80 object-contain transition-all duration-300 group-hover:opacity-100"
-                            />
+                      <CardContent className="p-6">
+                        <div className="flex flex-col md:flex-row md:items-center md:gap-8">
+                          <div className="flex items-center justify-center mb-4 md:mb-0 md:w-32">
+                            <div
+                              className={`${step.iconClass} transform transition-transform duration-300 group-hover:scale-110 flex items-center justify-center`}
+                            >
+                              <Image
+                                src={step.icon}
+                                alt={step.title}
+                                width={step.iconSize}
+                                height={step.iconSize}
+                                className="opacity-80 object-contain transition-all duration-300 group-hover:opacity-100"
+                              />
+                            </div>
                           </div>
-                          <div className="space-y-2 flex-1">
-                            <h3 className="text-lg sm:text-xl font-bold transition-colors duration-300 group-hover:text-black">
+                          <div className="flex-1">
+                            <h3 className="text-lg sm:text-xl font-bold transition-colors duration-300 group-hover:text-black mb-2 text-center md:text-left">
                               {step.title}
                             </h3>
-                            <p className="text-base sm:text-lg text-black font-medium text-left">
+                            <p className="text-base sm:text-lg text-black font-medium">
                               {step.description}
                             </p>
                           </div>
