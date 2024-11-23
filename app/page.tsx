@@ -1,18 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import { Card, CardContent } from "@/components/ui/card";
-
-interface SocialLink {
-  name: string;
-  link: string;
-  icon: React.ReactNode;
-}
+import { SocialLink, SocialLinks } from "@/components/SocialLinks";
 
 const FaqSection = dynamic(() => import("@/components/FaqSection"), {
   loading: () => <div>Loading...</div>,
@@ -21,6 +16,37 @@ const FaqSection = dynamic(() => import("@/components/FaqSection"), {
 
 function ParticlesBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<
+    Array<{
+      x: number;
+      y: number;
+      speed: number;
+      size: number;
+    }>
+  >([]);
+  const animationFrameIdRef = useRef<number>();
+
+  const animate = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particlesRef.current.forEach((particle) => {
+      particle.y -= particle.speed;
+      if (particle.y < 0) particle.y = canvas.height;
+
+      ctx.beginPath();
+      ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+      ctx.fill();
+    });
+
+    animationFrameIdRef.current = requestAnimationFrame(animate);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,50 +58,21 @@ function ParticlesBackground() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const particles: Array<{
-      x: number;
-      y: number;
-      speed: number;
-      size: number;
-    }> = [];
-
-    for (let i = 0; i < 50; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        speed: 0.5 + Math.random(),
-        size: Math.random() * 3,
-      });
-    }
-
-    let animationFrameId: number;
-
-    function animate() {
-      if (!canvas || !ctx) return;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle) => {
-        particle.y -= particle.speed;
-        if (particle.y < 0) particle.y = canvas.height;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
-        ctx.fill();
-      });
-
-      animationFrameId = requestAnimationFrame(animate);
-    }
+    particlesRef.current = Array.from({ length: 50 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      speed: 0.5 + Math.random(),
+      size: Math.random() * 3,
+    }));
 
     animate();
 
     return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
+      if (animationFrameIdRef.current) {
+        cancelAnimationFrame(animationFrameIdRef.current);
       }
     };
-  }, []);
+  }, [animate]);
 
   return (
     <canvas
@@ -102,7 +99,7 @@ export default function Home() {
     }
   };
 
-  const sectionVariants = {
+  const sectionVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 50,
@@ -120,7 +117,7 @@ export default function Home() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 20,
@@ -137,7 +134,7 @@ export default function Home() {
     },
   };
 
-  const titleVariants = {
+  const titleVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
@@ -149,73 +146,76 @@ export default function Home() {
     },
   };
 
-  const socialLinks: SocialLink[] = [
-    {
-      name: "Youtube",
-      link: "https://youtube.com/",
-      icon: (
-        <Image
-          src="/yt.svg"
-          alt="X"
-          width={54}
-          height={37}
-          className="opacity-80"
-        />
-      ),
-    },
-    {
-      name: "X",
-      link: "https://x.com/",
-      icon: (
-        <Image
-          src="/x.svg"
-          alt="X"
-          width={54}
-          height={37}
-          className="opacity-80"
-        />
-      ),
-    },
-    {
-      name: "Telegram",
-      link: "https://t.me/",
-      icon: (
-        <Image
-          src="/tg.svg"
-          alt="Telegram"
-          width={54}
-          height={37}
-          className="opacity-80"
-        />
-      ),
-    },
-    {
-      name: "Etherscan",
-      link: "https://etherscan.io/token/0x71164F2A46ABD32998503E4d69feFC0641EC2c11",
-      icon: (
-        <Image
-          src="/etherscan.svg"
-          alt="Etherscan"
-          width={54}
-          height={37}
-          className="opacity-80"
-        />
-      ),
-    },
-    {
-      name: "Uniswap",
-      link: "https://app.uniswap.org/",
-      icon: (
-        <Image
-          src="/uni.svg"
-          alt="Uniswap"
-          width={54}
-          height={37}
-          className="opacity-80"
-        />
-      ),
-    },
-  ];
+  const socialLinks: SocialLink[] = useMemo(
+    () => [
+      {
+        name: "Youtube",
+        link: "https://youtube.com/",
+        icon: (
+          <Image
+            src="/yt.svg"
+            alt="X"
+            width={54}
+            height={37}
+            className="opacity-80"
+          />
+        ),
+      },
+      {
+        name: "X",
+        link: "https://x.com/",
+        icon: (
+          <Image
+            src="/x.svg"
+            alt="X"
+            width={54}
+            height={37}
+            className="opacity-80"
+          />
+        ),
+      },
+      {
+        name: "Telegram",
+        link: "https://t.me/",
+        icon: (
+          <Image
+            src="/tg.svg"
+            alt="Telegram"
+            width={54}
+            height={37}
+            className="opacity-80"
+          />
+        ),
+      },
+      {
+        name: "Etherscan",
+        link: "https://etherscan.io/token/0x71164F2A46ABD32998503E4d69feFC0641EC2c11",
+        icon: (
+          <Image
+            src="/etherscan.svg"
+            alt="Etherscan"
+            width={54}
+            height={37}
+            className="opacity-80"
+          />
+        ),
+      },
+      {
+        name: "Uniswap",
+        link: "https://app.uniswap.org/",
+        icon: (
+          <Image
+            src="/uni.svg"
+            alt="Uniswap"
+            width={54}
+            height={37}
+            className="opacity-80"
+          />
+        ),
+      },
+    ],
+    []
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-theme via-theme/90 to-theme/80 relative overflow-hidden">
@@ -223,7 +223,11 @@ export default function Home() {
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,251,66,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_100%] animate-shimmer" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-theme/30 rounded-full blur-[120px] pointer-events-none" />
       <header className="fixed top-0 w-full bg-header-yellow z-50">
-        <nav className="container mx-auto px-4 py-2 flex items-center justify-between relative">
+        <nav
+          className="container mx-auto px-4 py-2 flex items-center justify-between relative"
+          role="navigation"
+          aria-label="Main navigation"
+        >
           <span
             className="text-2xl font-bold"
             style={{ fontFamily: "Avenir Next" }}
@@ -279,10 +283,19 @@ export default function Home() {
 
           <motion.div
             initial={false}
-            animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-            className={`${
-              isMenuOpen ? "flex" : "hidden"
-            } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
+            animate={
+              isMenuOpen
+                ? { opacity: 1, y: 0, height: "auto" }
+                : { opacity: 0, y: -20, height: 0 }
+            }
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`
+              fixed top-[60px] left-0 right-0 
+              bg-theme/95 backdrop-blur-sm 
+              border-t border-black/10 shadow-lg
+              md:hidden
+              overflow-hidden
+            `}
           >
             {[
               "home",
@@ -349,17 +362,7 @@ export default function Home() {
                 The dogs have had their day, it’s time for humans to take reign
                 again - daddy&apos;s home!
               </p>
-              <div className="flex space-x-1 justify-center md:justify-start mt-2 pl-1">
-                {socialLinks.map((social) => (
-                  <button
-                    key={social.name}
-                    onClick={() => window.open(social.link, "_blank")}
-                    className="hover:scale-105 transition-transform duration-200 p-2"
-                  >
-                    {social.icon}
-                  </button>
-                ))}
-              </div>
+              <SocialLinks links={socialLinks} />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -374,6 +377,10 @@ export default function Home() {
                 className="object-contain"
                 priority
                 loading="eager"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/fallback-image.png";
+                }}
               />
             </motion.div>
           </div>
