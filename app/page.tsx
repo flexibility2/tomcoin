@@ -386,14 +386,14 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionVariants}
-          className="pt-6 pb-12"
+          className="pt-6 pb-12 md:py-20 lg:py-24"
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col items-center md:items-end md:pr-[calc((100%-960px)/2)]">
                 <motion.h2
                   variants={titleVariants}
-                  className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-8"
+                  className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-8"
                 >
                   about
                 </motion.h2>
