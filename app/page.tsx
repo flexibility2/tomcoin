@@ -222,7 +222,7 @@ export default function Home() {
       <ParticlesBackground />
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,251,66,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_100%] animate-shimmer" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-theme/30 rounded-full blur-[120px] pointer-events-none" />
-      <header className="fixed top-0 w-full bg-header-yellow z-50">
+      <header className="fixed top-0 w-full bg-header-yellow/95 backdrop-blur-sm z-50 border-b border-black/10 shadow-sm">
         <nav
           className="container mx-auto px-4 py-2 flex items-center justify-between relative"
           role="navigation"
@@ -285,16 +285,27 @@ export default function Home() {
             initial={false}
             animate={
               isMenuOpen
-                ? { opacity: 1, y: 0, height: "auto" }
-                : { opacity: 0, y: -20, height: 0 }
+                ? {
+                    opacity: 1,
+                    y: 0,
+                    height: "auto",
+                  }
+                : {
+                    opacity: 0,
+                    y: -20,
+                    height: 0,
+                  }
             }
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
             className={`
               fixed top-[60px] left-0 right-0 
-              bg-theme/95 backdrop-blur-sm 
-              border-t border-black/10 shadow-lg
+              bg-theme 
+              border-t border-black/10
+              shadow-lg
               md:hidden
               overflow-hidden
+              px-4
+              z-40
             `}
           >
             {[
@@ -311,12 +322,16 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`text-left py-1.5 ${
-                  activeSection === item.split(" ").join("-").toLowerCase() &&
-                  item !== "home"
-                    ? "font-bold"
-                    : ""
-                }`}
+                className={`
+                  w-full text-left py-3 px-2
+                  ${
+                    activeSection === item.split(" ").join("-").toLowerCase() &&
+                    item !== "home"
+                      ? "font-bold bg-black/5 rounded-lg"
+                      : ""
+                  }
+                  hover:bg-black/5 rounded-lg transition-colors duration-200
+                `}
               >
                 {item}
               </button>
@@ -328,11 +343,11 @@ export default function Home() {
       <main className="pt-4 md:pt-8">
         <motion.section
           id="home"
-          className="flex items-start md:items-center relative -mt-2"
+          className="flex items-start md:items-center relative -mt-2 min-h-[90vh] sm:min-h-screen"
           style={{ opacity, scale }}
         >
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-2 md:gap-8 items-center relative pt-16 pb-8 md:py-12">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-2 md:gap-8 items-center relative pt-24 pb-8 md:py-12">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -340,7 +355,7 @@ export default function Home() {
               className="text-left"
             >
               <motion.h1
-                className="text-6xl md:text-7xl font-bold mb-3 relative pl-4"
+                className="text-6xl md:text-7xl font-bold mb-6 relative pl-4"
                 animate={{
                   backgroundPosition: ["0%", "100%", "0%"],
                 }}
@@ -357,7 +372,7 @@ export default function Home() {
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
+              <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-6 text-black/80">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it’s time for humans to take reign
                 again - daddy&apos;s home!
