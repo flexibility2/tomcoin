@@ -536,8 +536,10 @@ export default function Home() {
             </motion.h2>
             <motion.div variants={cardVariants} className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-extrabold mb-4">token supply:</h3>
-                <p className="text-3xl font-extrabold mb-6 break-words">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-4">
+                  token supply:
+                </h3>
+                <p className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-6 break-words">
                   420,690,000,000,000
                 </p>
               </div>
