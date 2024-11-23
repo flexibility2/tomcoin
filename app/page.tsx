@@ -390,26 +390,28 @@ export default function Home() {
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <motion.h2
-                variants={titleVariants}
-                className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-8 text-left md:text-right"
-              >
-                about
-              </motion.h2>
+              <div className="flex flex-col items-center md:items-end md:pr-[calc((100%-860px)/2)]">
+                <motion.h2
+                  variants={titleVariants}
+                  className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-8"
+                >
+                  about
+                </motion.h2>
+              </div>
               <motion.div variants={cardVariants}>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="flex justify-center md:justify-start">
+                <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-8">
+                  <div className="flex justify-center w-full md:w-auto">
                     <Image
                       src="/TomCoinWithEth.svg"
                       alt="About TomCoin"
                       width={400}
                       height={400}
-                      className="rounded-lg w-full max-w-[400px] h-auto"
+                      className="rounded-lg w-full max-w-[280px] h-auto"
                       loading="lazy"
                     />
                   </div>
-                  <div className="flex flex-col justify-center space-y-4 px-2 md:px-0">
-                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black max-w-[338px] md:max-w-none">
+                  <div className="flex-1 space-y-4 md:max-w-[580px]">
+                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black">
                       TomCoin (TOM) is a meme coin that operates on the Ethereum
                       blockchain. It was created as a tribute to the Supreme
                       Leader of the Tom Cult, Mr. Tom Style, who has gained
@@ -418,7 +420,7 @@ export default function Home() {
                       massively popular show: The Tom Style Show. TomCoin
                       positions itself purely as a meme coin.
                     </p>
-                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black max-w-[338px] md:max-w-none">
+                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black">
                       TomCoin is here to make meme coins great again. Launched
                       stealth with no presale, zero taxes, LP burnt and
                       ownership renounced, TOM is a coin for the people,
