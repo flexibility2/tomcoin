@@ -343,7 +343,7 @@ export default function Home() {
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
+              <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it’s time for humans to take reign
                 again - daddy's home!
@@ -409,7 +409,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-col justify-center space-y-4">
-                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
+                      <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black max-w-[338px] md:max-w-none">
                         TomCoin (TOM) is a meme coin that operates on the
                         Ethereum blockchain. It was created as a tribute to the
                         Supreme Leader of the Tom Cult, Mr. Tom Style, who has
@@ -418,7 +418,7 @@ export default function Home() {
                         through his massively popular show: The Tom Style Show.
                         TomCoin positions itself purely as a meme coin.
                       </p>
-                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
+                      <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black max-w-[338px] md:max-w-none">
                         TomCoin is here to make meme coins great again. Launched
                         stealth with no presale, zero taxes, LP burnt and
                         ownership renounced, TOM is a coin for the people,
@@ -504,7 +504,7 @@ export default function Home() {
                             <h3 className="text-lg sm:text-xl font-bold transition-colors duration-300 group-hover:text-black">
                               {step.title}
                             </h3>
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-medium text-left">
+                            <p className="text-base sm:text-lg text-black font-medium text-left">
                               {step.description}
                             </p>
                           </div>
@@ -662,7 +662,7 @@ export default function Home() {
                   buy tom
                 </Button>
 
-                <div className="text-black text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto text-left md:text-center px-4">
+                <div className="text-black text-base sm:text-lg max-w-2xl mx-auto text-left md:text-center px-4">
                   <p>
                     TomCoin is a meme coin with no intrinsic value or
                     expectation of financial return. The coin is for
