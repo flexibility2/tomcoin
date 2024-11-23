@@ -605,7 +605,7 @@ export default function Home() {
           className="py-10 bg-white/5 backdrop-blur"
         >
           <div className="container mx-auto px-4">
-            <motion.div variants={cardVariants} className="max-w-4xl mx-auto">
+            <motion.div variants={cardVariants} className="max-w-2xl mx-auto">
               <Card className="bg-white/90 backdrop-blur shadow-xl overflow-hidden">
                 <CardContent className="p-0">
                   <motion.div
@@ -631,7 +631,7 @@ export default function Home() {
                       alt="TomCoin Meme"
                       width={1200}
                       height={800}
-                      className="w-full h-auto"
+                      className="w-full h-auto object-contain"
                     />
                   </motion.div>
                 </CardContent>
