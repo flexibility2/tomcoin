@@ -326,25 +326,15 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-left"
             >
-              <motion.h1
-                className="text-6xl md:text-7xl font-bold mb-3 relative pl-4"
-                animate={{
-                  backgroundPosition: ["0%", "100%", "0%"],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
-                <span className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-black via-theme to-black bg-[length:200%_auto]">
+              <motion.h1 className="text-6xl md:text-7xl font-bold mb-6 relative pl-4">
+                <span className="relative inline-block">
                   <span className="font-['Avenir Next'] text-5xl sm:text-6xl md:text-[72px] leading-tight md:leading-[72px] text-center text-black w-full md:w-[305px] block font-bold">
                     TomCoin
                   </span>
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
-              <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
+              <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black/80 font-normal px-4 mb-6">
                 The most memeable, memorable, ridiculous, and insane meme coin.
                 The dogs have had their day, it’s time for humans to take reign
                 again - daddy&apos;s home!
@@ -411,7 +401,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex-1 space-y-4 md:max-w-[580px]">
-                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black px-4 md:px-0">
+                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black/80 font-normal px-4 md:px-0">
                       TomCoin (TOM) is a meme coin that operates on the Ethereum
                       blockchain. It was created as a tribute to the Supreme
                       Leader of the Tom Cult, Mr. Tom Style, who has gained
@@ -420,7 +410,7 @@ export default function Home() {
                       massively popular show: The Tom Style Show. TomCoin
                       positions itself purely as a meme coin.
                     </p>
-                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black px-4 md:px-0">
+                    <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black/80 font-normal px-4 md:px-0">
                       TomCoin is here to make meme coins great again. Launched
                       stealth with no presale, zero taxes, LP burnt and
                       ownership renounced, TOM is a coin for the people,
@@ -456,7 +446,7 @@ export default function Home() {
                   {
                     title: "Create a Wallet",
                     description:
-                      "download metamask or your wallet of choice from the app store or google play store for free. Desktop users, download the google chrome extension by going to metamask.io.",
+                      "Download MetaMask or your wallet of choice from the App Store or Google Play Store for free. Desktop users, download the Google Chrome extension by going to MetaMask.io.",
                     icon: "/metamask.svg",
                     iconSize: 60,
                     iconClass: "w-32 h-24",
@@ -464,7 +454,7 @@ export default function Home() {
                   {
                     title: "Get Some ETH",
                     description:
-                      "have ETH in your wallet to swap to TOM. If you don't have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.",
+                      "Have ETH in your wallet to swap to TOM. If you don't have any ETH, you can buy directly on MetaMask, transfer from another wallet, or buy on another exchange and send it to your wallet.",
                     icon: "/ethereum.svg",
                     iconSize: 60,
                     iconClass: "w-32 h-24",
@@ -472,7 +462,7 @@ export default function Home() {
                   {
                     title: "Go to Uniswap",
                     description:
-                      "connect to uniswap. Go to app.uniswap.org in google chrome or on the browser inside your metamask app. Connect your wallet. Paste the TOM token address into uniswap, select TomCoin, and confirm. When metamask prompts you for a wallet signature, sign.",
+                      "Connect to Uniswap. Go to App.Uniswap.org in Google Chrome or on the browser inside your MetaMask app. Connect your wallet. Paste the TOM token address into Uniswap, select TomCoin, and confirm. When MetaMask prompts you for a wallet signature, sign.",
                     icon: "/uniswap.svg",
                     iconSize: 60,
                     iconClass: "w-32 h-24",
@@ -480,7 +470,7 @@ export default function Home() {
                   {
                     title: "Swap ETH to TOM",
                     description:
-                      "swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.",
+                      "Swap ETH to TOM. We have no taxes so you don't need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.",
                     icon: "/e-t-swap.svg",
                     iconSize: 130,
                     iconClass: "w-32 h-24",
