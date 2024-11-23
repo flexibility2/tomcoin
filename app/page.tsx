@@ -406,7 +406,7 @@ export default function Home() {
                     loading="lazy"
                   />
                 </div>
-                <div className="flex flex-col justify-center space-y-4">
+                <div className="flex flex-col justify-center space-y-4 px-2 md:px-0">
                   <p className="text-base sm:text-lg leading-relaxed md:leading-[26px] text-left text-black max-w-[338px] md:max-w-none">
                     TomCoin (TOM) is a meme coin that operates on the Ethereum
                     blockchain. It was created as a tribute to the Supreme
