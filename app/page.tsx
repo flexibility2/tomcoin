@@ -658,12 +658,7 @@ export default function Home() {
           <div className="container mx-auto px-4 pb-12">
             <motion.div variants={cardVariants}>
               <div className="max-w-3xl mx-auto text-center">
-                <Button
-                  className="px-16 py-8 bg-black text-white hover:bg-black/90 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mb-12 text-2xl font-bold"
-                  onClick={() =>
-                    window.open("https://app.uniswap.org/", "_blank")
-                  }
-                >
+                <Button className="px-16 py-8 bg-black text-white hover:bg-white hover:text-black rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mb-12 text-2xl font-bold">
                   buy tom
                 </Button>
 
