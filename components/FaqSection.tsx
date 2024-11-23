@@ -67,7 +67,7 @@ export default function FaqSection() {
       <div className="container mx-auto px-4">
         <motion.h2
           variants={titleVariants}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8 text-black"
+          className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-8 text-black"
         >
           faq
         </motion.h2>

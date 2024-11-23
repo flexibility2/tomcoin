@@ -390,7 +390,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-8"
             >
               about
             </motion.h2>
@@ -440,7 +440,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-8"
             >
               how to buy
             </motion.h2>
@@ -525,7 +525,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-8"
             >
               tokenomics
             </motion.h2>
@@ -562,7 +562,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-8"
             >
               roadmap
             </motion.h2>
