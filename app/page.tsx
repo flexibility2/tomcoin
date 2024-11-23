@@ -245,10 +245,11 @@ export default function Home() {
                 onClick={() =>
                   scrollToSection(item.split(" ").join("-").toLowerCase())
                 }
-                className={`${activeSection === item.split(" ").join("-").toLowerCase()
-                  ? "font-bold"
-                  : ""
-                  } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
+                className={`${
+                  activeSection === item.split(" ").join("-").toLowerCase()
+                    ? "font-bold"
+                    : ""
+                } px-2 py-1 hover:bg-black/5 rounded-md transition-colors duration-200`}
               >
                 {item}
               </button>
@@ -278,8 +279,9 @@ export default function Home() {
           <motion.div
             initial={false}
             animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-            className={`${isMenuOpen ? "flex" : "hidden"
-              } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
+            className={`${
+              isMenuOpen ? "flex" : "hidden"
+            } md:hidden flex-col gap-2 absolute top-full left-0 right-0 bg-theme/95 backdrop-blur-sm p-3 border-t border-black/10 shadow-lg`}
           >
             {[
               "home",
@@ -295,11 +297,12 @@ export default function Home() {
                   scrollToSection(item.split(" ").join("-").toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`text-left py-1.5 ${activeSection === item.split(" ").join("-").toLowerCase() &&
+                className={`text-left py-1.5 ${
+                  activeSection === item.split(" ").join("-").toLowerCase() &&
                   item !== "home"
-                  ? "font-bold"
-                  : ""
-                  }`}
+                    ? "font-bold"
+                    : ""
+                }`}
               >
                 {item}
               </button>
@@ -334,14 +337,16 @@ export default function Home() {
                 }}
               >
                 <span className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-black via-theme to-black bg-[length:200%_auto]">
-                  <span className="font-['Avenir Next'] text-4xl sm:text-5xl md:text-[48px] leading-tight md:leading-[48px] text-center text-black w-full md:w-[205px] block font-bold">
+                  <span className="font-['Avenir Next'] text-5xl sm:text-6xl md:text-[72px] leading-tight md:leading-[72px] text-center text-black w-full md:w-[305px] block font-bold">
                     TomCoin
                   </span>
                   <div className="absolute -inset-2 bg-theme/30 blur-2xl -z-10" />
                 </span>
               </motion.h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left [text-underline-position:from-font] [text-decoration-skip-ink:none] max-w-[480px] px-4 mb-3">
-                The most memeable, memorable, ridiculous, and insane meme coin. The dogs have had their day, it’s time for humans to take reign again - daddy's home!
+                The most memeable, memorable, ridiculous, and insane meme coin.
+                The dogs have had their day, it’s time for humans to take reign
+                again - daddy's home!
               </p>
               <div className="flex space-x-1 justify-center md:justify-start mt-2 pl-1">
                 {socialLinks.map((social) => (
@@ -385,7 +390,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
               about
             </motion.h2>
@@ -405,12 +410,20 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col justify-center space-y-4">
                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
-                        TomCoin (TOM) is a meme coin that operates on the Ethereum blockchain. It was created as a tribute to the Supreme Leader of the Tom Cult, Mr. Tom Style, who has gained enormous popularity and a cult following amongst the next generation of entrepreneurs around the world through his massively popular show: The Tom Style Show. TomCoin positions itself purely as a meme coin.
-
+                        TomCoin (TOM) is a meme coin that operates on the
+                        Ethereum blockchain. It was created as a tribute to the
+                        Supreme Leader of the Tom Cult, Mr. Tom Style, who has
+                        gained enormous popularity and a cult following amongst
+                        the next generation of entrepreneurs around the world
+                        through his massively popular show: The Tom Style Show.
+                        TomCoin positions itself purely as a meme coin.
                       </p>
                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed md:leading-[26px] lg:leading-[30px] text-left text-black max-w-[338px]">
-                        TomCoin is here to make meme coins great again. Launched stealth with no presale, zero taxes, LP burnt and ownership renounced, TOM is a coin for the people, forever. Fueled by pure memetic power, let TOM show you the way.
-
+                        TomCoin is here to make meme coins great again. Launched
+                        stealth with no presale, zero taxes, LP burnt and
+                        ownership renounced, TOM is a coin for the people,
+                        forever. Fueled by pure memetic power, let TOM show you
+                        the way.
                       </p>
                     </div>
                   </div>
@@ -432,7 +445,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
               how to buy
             </motion.h2>
@@ -517,7 +530,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
               tokenomics
             </motion.h2>
@@ -552,7 +565,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <motion.h2
               variants={titleVariants}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
             >
               roadmap
             </motion.h2>
@@ -560,18 +573,20 @@ export default function Home() {
               <Card className="bg-white shadow-xl border-2 border-black rounded-[2rem]">
                 <CardContent className="py-12 px-8">
                   <motion.div className="space-y-6">
-                    {["Meme", "Vibe and HODL", "Meme Takeover"].map((phase, index) => (
-                      <motion.div
-                        key={phase}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.2 }}
-                      >
-                        <p className="text-base sm:text-lg text-black font-medium">
-                          Phase {index + 1}: {phase}
-                        </p>
-                      </motion.div>
-                    ))}
+                    {["Meme", "Vibe and HODL", "Meme Takeover"].map(
+                      (phase, index) => (
+                        <motion.div
+                          key={phase}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.2 }}
+                        >
+                          <p className="text-base sm:text-lg text-black font-medium">
+                            Phase {index + 1}: {phase}
+                          </p>
+                        </motion.div>
+                      )
+                    )}
                   </motion.div>
                 </CardContent>
               </Card>
@@ -640,14 +655,18 @@ export default function Home() {
               <div className="max-w-3xl mx-auto text-center">
                 <Button
                   className="px-16 py-8 bg-black text-white hover:bg-black/90 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mb-12 text-2xl font-bold"
-                  onClick={() => window.open("https://app.uniswap.org/", "_blank")}
+                  onClick={() =>
+                    window.open("https://app.uniswap.org/", "_blank")
+                  }
                 >
                   buy tom
                 </Button>
 
                 <div className="text-black text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto text-left md:text-center px-4">
                   <p>
-                    TomCoin is a meme coin with no intrinsic value or expectation of financial return. The coin is for entertainment purposes only.
+                    TomCoin is a meme coin with no intrinsic value or
+                    expectation of financial return. The coin is for
+                    entertainment purposes only.
                   </p>
                   <p className="font-medium">Enjoy responsibly!</p>
                 </div>
